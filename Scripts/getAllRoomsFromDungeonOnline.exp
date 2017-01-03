@@ -1,0 +1,31 @@
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+expect ">"
+send "gdt\n"
+expect "GDT>"
+send "nd\n"
+expect "No deaths."
+expect "GDT>"
+send "tk\n"
+expect "Entry:"
+send "15\n"
+expect "Taken."
+expect "GDT>"
+send "ex\n"
+expect ">"
+send "Turn on lamp\n"
+expect "The lamp is now on."
+expect ">"
+set count 295
+
+for {set i 50} {$i < $count} {incr i 1} {
+send "gdt\n"
+expect "GDT>"
+send "ah\n"
+expect "Old="
+send "$i\n"
+expect "GDT>"
+send "EX\n"
+expect ">"
+send "look\n"
+expect ">"
+}

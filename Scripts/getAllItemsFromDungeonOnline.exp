@@ -1,0 +1,28 @@
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+expect ">"
+send "gdt\n"
+expect "GDT>"
+send "nd\n"
+expect "No deaths."
+expect "GDT>"
+send "ex\n"
+expect ">"
+set count 193
+
+for {set i 1} {$i < $count} {incr i 1} {
+send "gdt\n"
+expect "GDT>"
+send "tk\n"
+expect "Entry:"
+send "$i\n"
+expect "Taken."
+expect "GDT>"
+send "EX\n"
+expect ">"
+send "inventory\n"
+expect "You are carrying:"
+expect ">"
+send "drop all\n"
+expect "Dropped."
+expect ">"
+}
