@@ -1,0 +1,4234 @@
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+Welcome to Dungeon.			This version created 11-MAR-78.
+You are in an open field west of a big white house with a boarded
+front door.
+There is a small wrapped mailbox here.
+>gdt
+GDT>dt
+Entry:    1
+dt
+Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    2
+dt
+Done.
+GDT>Entry:    3
+dt
+Revision history:
+11-NOV-16	Converted to HHC (V2.7HHC)
+11-MAR-91	Converted to C (V2.7)
+14-SEP-87	Converted to f77/Unix for pdps and Vaxen (V2.6B)
+18-JUL-80	Transportable data base file (V2.5A).
+28-FEB-80	Compressed text file (V2.4A).
+15-NOV-79	Bug fixes (V2.3A).
+18-JAN-79	Revised DECUS version (V2.2A).
+10-OCT-78	Puzzle Room (V2.1A).
+10-SEP-78	Endgame (V2.0A).
+10-AUG-78	DECUS version (V1.1B).
+14-JUN-78	Public version with parser (V1.1A).
+4-MAR-78	Debugging version (V1.0A).
+GDT>Entry:    4
+dt
+Useful commands:
+
+   The 'BRIEF' command suppresses printing of long room descriptions
+for rooms which have been visited.  The 'SUPERBRIEF' command suppresses
+printing of long room descriptions for all rooms.  The 'VERBOSE'
+command restores long descriptions.
+   The 'INFO' command prints information which might give some idea
+of what the game is about.
+   The 'QUIT' command prints your score and asks whether you wish
+to continue playing.
+   The 'SAVE' command saves the state of the game for later continuation.
+   The 'RESTORE' command restores a saved game.
+   The 'INVENTORY' command lists the objects in your possession.
+   The 'LOOK' command prints a description of your surroundings.
+   The 'SCORE' command prints your current score and ranking.
+   The 'TIME' command tells you how long you have been playing.
+   The 'DIAGNOSE' command reports on your injuries, if any.
+
+Command abbreviations:
+
+   The 'INVENTORY' command may be abbreviated 'I'.
+   The 'LOOK' command may be abbreviated 'L'.
+   The 'QUIT' command may be abbreviated 'Q'.
+
+Containment:
+
+   Some objects can contain other objects.  Many such containers can
+be opened and closed.  The rest are always open.   They may or may
+not be transparent.  For you to access (e.g., take) an object
+which is in a container, the container must be open.  For you
+to see such an object, the container must be either open or
+transparent.  Containers have a capacity, and objects have sizes;
+the number of objects which will fit therefore depends on their
+sizes.  You may put any object you have access to (it need not be
+in your hands) into any other object.  At some point, the program
+will attempt to pick it up if you don't already have it, which
+process may fail if you're carrying too much.  Although containers
+can contain other containers, the program doesn't access more than
+one level down.
+
+Fighting:
+
+   Occupants of the dungeon will, as a rule, fight back when
+attacked.  In some cases, they may attack even if unprovoked.
+Useful verbs here are 'ATTACK <villain> WITH <weapon>', 'KILL',
+etc.  Knife-throwing may or may not be useful.  You have a
+fighting strength which varies with time.  Being in a fight,
+getting killed, and being injured all lower this strength.
+Strength is regained with time.  Thus, it is not a good idea to
+fight someone immediately after being killed.  Other details
+should become apparent after a few melees or deaths.
+
+Command parser:
+
+   A command is one line of text terminated by a carriage return.
+For reasons of simplicity, all words are distinguished by their
+first six letters.  All others are ignored.  For example, typing
+'DISASSEMBLE THE ENCYCLOPEDIA' is not only meaningless, it also
+creates excess effort for your fingers.  Note that this trunca-
+tion may produce ambiguities in the intepretation of longer words.
+
+   You are dealing with a fairly stupid parser, which understands
+the following types of things--
+
+   Actions:
+	Among the more obvious of these, such as TAKE, PUT, DROP, etc.
+	Fairly general forms of these may be used, such as PICK UP,
+	PUT DOWN, etc.
+
+   Directions:
+	NORTH, SOUTH, UP, DOWN, etc. and their various abbreviations.
+	Other more obscure directions (LAND, CROSS) are appropriate in
+	only certain situations.
+
+   Objects:
+	Most objects have names and can be referenced by them.
+
+   Adjectives:
+	Some adjectives are understood and required when there are
+	two objects which can be referenced with the same 'name' (e.g.,
+	DOORs, BUTTONs).
+
+   Prepositions:
+	It may be necessary in some cases to include prepositions, but
+	the parser attempts to handle cases which aren't ambiguous
+	without.  Thus 'GIVE CAR TO DEMON' will work, as will 'GIVE DEMON
+	CAR'.  'GIVE CAR DEMON' probably won't do anything interesting.
+	When a preposition is used, it should be appropriate;  'GIVE CAR
+	WITH DEMON' won't parse.
+
+   Sentences:
+	The parser understands a reasonable number of syntactic construc-
+	tions.  In particular, multiple commands (separated by commas)
+	can be placed on the same line.
+
+   Ambiguity:
+	The parser tries to be clever about what to do in the case of
+	actions which require objects that are not explicitly specified.
+	If there is only one possible object, the parser will assume
+	that it should be used.  Otherwise, the parser will ask.
+	Most questions asked by the parser can be answered.
+GDT>Entry:    5
+dt
+Welcome to Dungeon!
+
+   You are near a large dungeon, which is reputed to contain vast
+quantities of treasure.   Naturally, you wish to acquire some of it.
+In order to do so, you must of course remove it from the dungeon.  To
+receive full credit for it, you must deposit it safely in the trophy
+case in the living room of the house.
+
+   In addition to valuables, the dungeon contains various objects
+which may or may not be useful in your attempt to get rich.  You may
+need sources of light, since dungeons are often dark, and weapons,
+since dungeons often have unfriendly things wandering about.  Reading
+material is scattered around the dungeon as well;  some of it
+is rumored to be useful.
+
+   Recent adventurers report a new passage has been installed which 
+leads to the North Pole and the lair of a mischevious elf who will trade
+for secrets he holds that may aid your quest.
+ 
+   To determine how successful you have been, a score is kept.
+When you find a valuable object and pick it up, you receive a
+certain number of points, which depends on the difficulty of finding
+the object.  You receive extra points for transporting the treasure
+safely to the living room and placing it in the trophy case.  In
+addition, some particularly interesting rooms have a value associated
+with visiting them.  The only penalty is for getting yourself killed,
+which you may do only twice.
+
+   Of special note is a thief (always carrying a large bag) who
+likes to wander around in the dungeon (he has never been seen by the
+light of day).  He likes to take things.  Since he steals for pleasure
+rather than profit and is somewhat sadistic, he only takes things which
+you have seen.  Although he prefers valuables, sometimes in his haste
+he may take something which is worthless.  From time to time, he examines
+his take and discards objects which he doesn't like.  He may occas-
+ionally stop in a room you are visiting, but more often he just wanders
+through and rips you off (he is a skilled pickpocket).
+GDT>Entry:    6
+dt
+Please answer the question.
+GDT>Entry:    7
+dt
+You clearly are a suicidal maniac.  We don't allow psychotics in the
+dungeon, since they may harm other adventurers.  Your remains will be
+installed in the land of the living dead, where your fellow adventurers
+may gloat over them.
+GDT>Entry:    8
+dt
+What?  You don't trust me?  Why, only last week I patched a running
+RSX system and it survived for over thirty seconds.  Oh, well.
+GDT>Entry:    9
+dt
+Now let me see...
+Well, we weren't quite able to restore your state.  You can't have
+everything.
+GDT>Entry:    10
+dt
+Do you wish me to try to patch you?
+GDT>Entry:    11
+dt
+You are behind the white house.  In one corner of the house
+there is a window which is #.
+GDT>Entry:    12
+dt
+open
+GDT>Entry:    13
+dt
+slightly ajar
+GDT>Entry:    14
+dt
+You are in the kitchen of the white house.  A table seems to have
+been used recently for the preparation of food.  A passage leads to
+the west, and a dark staircase can be seen leading upward.  To the
+east is a small window which is #.
+GDT>Entry:    15
+dt
+You are in the living room.  There is a door to the east.  To the west
+is a wooden door with strange gothic lettering, which appears to be
+nailed shut.
+GDT>Entry:    16
+dt
+You are in the living room.  There is a door to the east.  To the west
+is a cyclops-shaped hole in an old wooden door, above which is some
+strange gothic lettering.
+GDT>Entry:    17
+dt
+In the center of the room is a large oriental rug.
+GDT>Entry:    18
+dt
+In the center of the room is a closed trap door.
+GDT>Entry:    19
+dt
+In the center of the room is an open trap door.
+GDT>Entry:    20
+dt
+There is a rug lying next to an open trap door.
+GDT>Entry:    21
+dt
+You are in a dark and damp cellar with a narrow passageway leading
+east, and a crawlway to the south.  To the west is the bottom of a
+steep metal ramp which is unclimbable.
+GDT>Entry:    22
+dt
+The door crashes shut, and you hear someone barring it.
+GDT>Entry:    23
+dt
+You are in a small room near the maze.  There are twisty
+passages in the immediate vicinity.
+GDT>Entry:    24
+dt
+Above you is a grating locked with a skull-and-crossbones lock.
+GDT>Entry:    25
+dt
+Above you is an open grating with sunlight pouring in.
+GDT>Entry:    26
+dt
+Above you is a grating.
+GDT>Entry:    27
+dt
+You are in a clearing, with a forest surrounding you on the west
+and south.
+GDT>Entry:    28
+dt
+There is a grating securely fastened into the ground.
+GDT>Entry:    29
+dt
+There is an open grating descending into darkness.
+GDT>Entry:    30
+dt
+A grating appears on the ground.
+GDT>Entry:    31
+dt
+You are in a long room on the south shore of a large reservoir.
+GDT>Entry:    32
+dt
+You are in a long room, to the north of which was formerly a
+reservoir.  However, with the water level lowered, there is merely
+a wide stream running through the center of the room.
+GDT>Entry:    33
+dt
+There is a western exit, a passageway south, and a steep pathway
+climbing up along the edge of a cliff.
+GDT>Entry:    34
+dt
+You are on the reservoir.  Beaches can be seen north and south.
+Upstream a small stream enters the reservoir through a narrow
+cleft in the rocks.  The dam can be seen downstream.
+GDT>Entry:    35
+dt
+You are on what used to be a large reservoir, but which is now a
+large mud pile.  There are 'shores' to the north and south.
+GDT>Entry:    36
+dt
+You are in a large cavernous room, north of a large reservoir.
+GDT>Entry:    37
+dt
+You are in a large cavernous room, to the south of which was formerly
+a reservoir.  However, with the water level lowered, there is merely
+a wide stream running through the center of the room.
+GDT>Entry:    38
+dt
+There is a tunnel leaving the room to the north.
+GDT>Entry:    39
+dt
+You are in a large room with giant icicles hanging from the walls
+and ceiling.  There are passages to the north and east.
+GDT>Entry:    40
+dt
+Part of the glacier has been melted.
+GDT>Entry:    41
+dt
+There is a large passageway leading westward.
+GDT>Entry:    42
+dt
+You are in a large square room with tall ceilings.  There are exits
+on the north, east, and west sides of the room.  On the south wall is
+an enormous mirror which fills the entire wall.
+GDT>Entry:    43
+dt
+Unfortunately, you have managed to destroy it by your reckless
+actions.
+GDT>Entry:    44
+dt
+		BOOOOOOOOOM
+GDT>Entry:    45
+dt
+You are in large room which seems to be air conditioned.  In one
+corner there is a machine (?) which is shaped somewhat like a clothes
+dryer.  On the 'panel' there is a switch which is labelled in an
+obscure dialect of Swahili.  Fortunately, I know this dialect, and the
+label translates to 'START'.  The switch does not appear to be manip-
+ulable by any human hand (unless the fingers are about 1/16 by 1/4
+inch).  On the front of the machine is a large lid, which is #.
+GDT>Entry:    46
+dt
+closed
+GDT>Entry:    47
+dt
+The cave is very windy at the moment, and your candles have blown out.
+GDT>Entry:    48
+dt
+You are in a small room that has only one door, to the east.
+GDT>Entry:    49
+dt
+In the corner of the room on the ceiling is a large vampire bat who
+is obviously deranged and holding his nose.
+GDT>Entry:    50
+dt
+A deranged vampire bat (a reject from WUMPUS) swoops down
+from the ceiling and lifts you away...
+GDT>Entry:    51
+dt
+You are at the periphery of a large dome, which forms the ceiling
+of another room below.  Protecting you from a precipitous drop is a
+wooden railing which circles the dome.
+GDT>Entry:    52
+dt
+Hanging down from the railing is a rope which ends about ten feet
+from the floor below.
+GDT>Entry:    53
+dt
+I'm afraid that the leap you attempted has done you in.
+GDT>Entry:    54
+dt
+You are in a large room with a prominent doorway leading to a down
+staircase.  To the west is a narrow twisting tunnel.  Above you is a
+large dome painted with scenes depicting elvish hacking rites.  Up
+around the edge of the dome (20 feet up) is a wooden railing.  In the
+center of the room there is a white marble pedestal.
+GDT>Entry:    55
+dt
+A large piece of rope descends from the railing above, ending some
+five feet above your head.
+GDT>Entry:    56
+dt
+You are in a circular room with passages off in eight directions.
+GDT>Entry:    57
+dt
+Your compass needle spins wildly, and you cannot get your bearings.
+GDT>Entry:    58
+dt
+According to Prof. TAA of MIT Tech, the rapidly changing magnetic
+fields in the room are so intense as to cause you to be electrocuted.
+I really don't know, but in any event, something has killed you.
+GDT>Entry:    59
+dt
+You are outside a large gateway, on which is inscribed:
+
+	"Abandon every hope, all ye who enter here."
+
+The gate is open.  Through it you can see a desolation, with a pile of
+mangled corpses in one corner.  Thousands of voices, lamenting some
+hideous fate, can be heard.
+GDT>Entry:    60
+dt
+The way through the gate is barred by evil spirits, who jeer at your
+attempts to pass.
+GDT>Entry:    61
+dt
+There is a clap of thunder, and a voice echoes through the
+cavern:  "Begone, chomper!"  Apparently, the voice thinks you
+are an evil spirit and dismisses you from the land of the living.
+GDT>Entry:    62
+dt
+You are not equipped for an exorcism.
+GDT>Entry:    63
+dt
+There is a clap of thunder, and a voice echoes through the
+cavern:  "Begone, fiends!"  The spirits, sensing the presense
+of a greater power, flee through the walls.
+GDT>Entry:    64
+dt
+You have entered the land of the living dead, a large desolate
+room.  Although it is apparently uninhabited, you can hear the
+sounds of thousands of lost souls weeping and moaning.  In
+the east corner are stacked the remains of dozens of previous
+adventurers who were less fortunate than yourself.  To the east
+is an ornate passage, apparently recently constructed.
+GDT>Entry:    65
+dt
+Amid the desolation, you spot what appears to be your head,
+tastefully impaled on the end of a long pole.
+GDT>Entry:    66
+dt
+You are standing on the top of flood control dam #3, which was
+quite a tourist attraction in times far distant.  There are paths
+to the north, south, east, and down.
+GDT>Entry:    67
+dt
+The sluice gates on the dam are closed.  Behind the dam, there can
+be seen a wide lake.  A small stream is formed by the runoff from
+the lake.
+GDT>Entry:    68
+dt
+It appears that the dam has been opened, since the water level behind
+the dam is low and the sluice gate is open.  Water is rushing down-
+stream through the gates.
+GDT>Entry:    69
+dt
+There is a control panel here.  There is a large metal bolt on the
+panel.  Above the bolt is a small green plastic bubble.
+GDT>Entry:    70
+dt
+The green bubble is glowing.
+GDT>Entry:    71
+dt
+The water level is now up to your ankles.
+GDT>Entry:    72
+dt
+The water level is now up to your shins.
+GDT>Entry:    73
+dt
+The water level is now up to your knees.
+GDT>Entry:    74
+dt
+The water level is now up to your hips.
+GDT>Entry:    75
+dt
+The water level is now up to your waist.
+GDT>Entry:    76
+dt
+The water level is now up to your chest.
+GDT>Entry:    77
+dt
+The water level is now up to your neck.
+GDT>Entry:    78
+dt
+The water level is now over your head.
+GDT>Entry:    79
+dt
+The water level is now high in your lungs.
+GDT>Entry:    80
+dt
+The room is full of water and cannot be entered.
+GDT>Entry:    81
+dt
+I'm afraid you have done drowned yourself.
+GDT>Entry:    82
+dt
+You hear a scream of anguish as you violate the robber's hideaway.
+Using passages unknown to you, he rushes to its defense.
+GDT>Entry:    83
+dt
+The thief gestures mysteriously, and the treasures in the room
+suddenly vanish.
+GDT>Entry:    84
+dt
+Something seems funny about the feel of the buoy.
+GDT>Entry:    85
+dt
+Oh dear, you seem to have gone over Aragain Falls.  Not a very
+smart thing to do, apparently.
+GDT>Entry:    86
+dt
+You seem to be digging a hole here.
+GDT>Entry:    87
+dt
+The hole is getting deeper, but that's about it.
+GDT>Entry:    88
+dt
+You are surrounded by a wall of sand on all sides.
+GDT>Entry:    89
+dt
+You can see a small statue in the sand.
+GDT>Entry:    90
+dt
+The wall collapses, smothering you.
+GDT>Entry:    91
+dt
+There is nothing to dig into here.
+GDT>Entry:    92
+dt
+You are digging into a pile of bat guano.
+GDT>Entry:    93
+dt
+You seem to be getting knee deep in guano.
+GDT>Entry:    94
+dt
+You are covered with bat turds, cretin.
+GDT>Entry:    95
+dt
+This is getting you nowhere.
+GDT>Entry:    96
+dt
+You are at the top of Aragain Falls, an enormous waterfall with a
+drop of about 450 feet.  The only path here is on the north end.
+There is a man-sized barrel here which you could fit into.
+GDT>Entry:    97
+dt
+A beautiful rainbow can be seen over the falls and to the east.
+GDT>Entry:    98
+dt
+A solid rainbow spans the falls.
+GDT>Entry:    99
+dt
+According to Prof. TAA of MIT Tech, the rapidly changing magnetic
+fields in the room are so intense as to fry all the delicate innards
+of the robot.  I really don't know, but in any event, smoke is coming
+out of its ears, and it has stopped moving.
+GDT>Entry:    100
+dt
+You are on a wide ledge high into the volcano.  The rim of the
+volcano is about 200 feet above, and there is a precipitous drop
+below to the floor.
+GDT>Entry:    101
+dt
+The way to the south is blocked by rubble.
+GDT>Entry:    102
+dt
+There is a small door to the south.
+GDT>Entry:    103
+dt
+The way to the south is blocked by rubble.
+GDT>Entry:    104
+dt
+You are in a dusty old room which is virtually featureless, except
+for an exit on the north side.
+GDT>Entry:    105
+dt
+Imbedded in the far wall is a rusty old box.  It appears that
+the box is somewhat damaged, since an oblong hole has been
+chipped out of the front of it.
+GDT>Entry:    106
+dt
+On the far wall is a rusty box, whose door has been blown off.
+GDT>Entry:    107
+dt
+You are in a room with a low ceiling which is circular in shape.
+There are exits to the east and southeast.
+GDT>Entry:    108
+dt
+As you enter, your compass starts spinning wildly.
+GDT>Entry:    109
+dt
+The ledge has collapsed and cannot be landed on.
+GDT>Entry:    110
+dt
+The ledge collapses, giving you a narrow escape.
+GDT>Entry:    111
+dt
+The force of the explosion has caused the ledge to collapse belatedly.
+GDT>Entry:    112
+dt
+The ledge collapses, leaving you with no place to land.
+GDT>Entry:    113
+dt
+The ledge collapses, probably as a result of the explosion.  A large
+chunk of it, which is attached to the hook, drags you down to the
+ground.  Fatally.
+GDT>Entry:    114
+dt
+The way is blocked by debris from an explosion.
+GDT>Entry:    115
+dt
+You may recall your recent explosion.  Well, probably as a result of
+that, you hear an ominous rumbling, as if one of the rooms in the
+dungeon has collapsed.
+GDT>Entry:    116
+dt
+The room trembles and 50,000 pounds of rock fall on you,
+turning you into a pancake.
+GDT>Entry:    117
+dt
+The house shakes, and the ceiling of the room you're in collapses,
+turning you into a pancake.
+GDT>Entry:    118
+dt
+A volcano gnome seems to walk straight out of the wall and says,
+"I have a very busy appointment schedule and little time to waste on
+trespassers, but for a very small fee, I'll show you the way out."
+You notice that the gnome is nervously glancing at his watch.
+GDT>Entry:    119
+dt
+Suddenly a sinister, wraithlike figure, cloaked and hooded, appears
+seeming to float in the air before you.  In a low, almost inaudible
+voice he says, "I welcome you to the ranks of the chosen of Zork.  You
+have persisted through many trials and tests and have overcome them
+all.  One such as yourself is fit to join even the implementers!"
+He then raises his oaken staff and, chuckling, drifts away like a
+wisp of smoke, his laughter fading in the distance.
+When the smoke clears, the phrase "send email to peppermint@northpolewonderland.com" 
+is all that remains.
+GDT>Entry:    120
+dt
+Please forward problem reports and suggestions to:
+   ian@airs.com or uunet!airs!ian (Ian Lance Taylor)
+   Attention:  Dungeon Maintenance
+GDT>Entry:    121
+dt
+Unfortunately, it is impossible to tell directions in here.
+GDT>Entry:    122
+dt
+The slag turns out to be rather insubstantial and crumbles into dust
+at your touch.  It must not have been very valuable.
+GDT>Entry:    123
+dt
+The lid opens.
+GDT>Entry:    124
+dt
+The lid closes.
+GDT>Entry:    125
+dt
+Look around.
+GDT>Entry:    126
+dt
+You think it isn't?
+GDT>Entry:    127
+dt
+I think you've already done that.
+GDT>Entry:    128
+dt
+The trophy case is securely fastened to the wall (perhaps to foil any
+attempt by robbers to remove it).
+GDT>Entry:    129
+dt
+The bottle hits the far wall and is decimated.
+GDT>Entry:    130
+dt
+The basket is at the other end of the chain.
+GDT>Entry:    131
+dt
+A brilliant maneuver destroys the bottle.
+GDT>Entry:    132
+dt
+The water splashes on the walls and evaporates immediately.
+GDT>Entry:    133
+dt
+The water spills to the floor and evaporates immediately.
+GDT>Entry:    134
+dt
+It is not tied to anything.
+GDT>Entry:    135
+dt
+There is nothing it can be tied to.
+GDT>Entry:    136
+dt
+The rope is already attached.
+GDT>Entry:    137
+dt
+The rope drops over the side and comes within ten feet of the floor.
+GDT>Entry:    138
+dt
+I see no objects here.
+GDT>Entry:    139
+dt
+Although you tied it incorrectly, the rope becomes free.
+GDT>Entry:    140
+dt
+The rope drops gently to the floor below.
+GDT>Entry:    141
+dt
+The rope is tied to the railing.
+GDT>Entry:    142
+dt
+The lamp has smashed into the floor, and the light has gone out.
+GDT>Entry:    143
+dt
+The rug is too heavy to lift, but in trying to raise it you
+notice an irregularity beneath it.
+GDT>Entry:    144
+dt
+The rug is extremely heavy and cannot be carried.
+GDT>Entry:    145
+dt
+With a great effort, the rug is moved to one side of the room.
+With the rug moved, the dusty cover of a closed trap door appears.
+GDT>Entry:    146
+dt
+Having moved the carpet previously, you find it impossible
+to move it again.
+GDT>Entry:    147
+dt
+You are stopped by a cloud of poisonous gas.
+GDT>Entry:    148
+dt
+Time passes... and you die from some obscure poisoning.
+GDT>Entry:    149
+dt
+The gnome glances at his watch.  "Oops!  I'm late for an
+an appointment."  He disappears, leaving you alone on the shelf.
+GDT>Entry:    150
+dt
+Now you've done it.  It seems that the brick has other properties
+than weight, namely the ability to blow you to smithereens.
+GDT>Entry:    151
+dt
+There is an explosion nearby.
+GDT>Entry:    152
+dt
+The wire rapidly burns into nothing.
+GDT>Entry:    153
+dt
+The match has gone out.
+GDT>Entry:    154
+dt
+The lamp appears to be getting dimmer.
+GDT>Entry:    155
+dt
+The lamp is dying.
+GDT>Entry:    156
+dt
+The candles grow short.
+GDT>Entry:    157
+dt
+The candles are very short.
+GDT>Entry:    158
+dt
+The leaves burn, and the neighbors start to complain.
+GDT>Entry:    159
+dt
+The sight of someone carrying a pile of burning leaves so offends
+the neighbors that they come over and put you out.
+GDT>Entry:    160
+dt
+As you pick up the rusty knife, your sword gives a single pulse
+of blinding blue light.
+GDT>Entry:    161
+dt
+As the knife approaches its victim, your mind is submerged by an
+overmastering will.  Slowly, your hand turns, until the rusty blade
+is an inch from your neck.  The knife seems almost to sing as it
+savagely cuts your throat.
+GDT>Entry:    162
+dt
+A ghost appears in the room and is appalled by your desecration
+of the remains of a fellow adventurer.  He casts a curse on
+all of your valuables and orders them banished to the land of
+the living dead.  The ghost leaves, muttering obscenities.
+GDT>Entry:    163
+dt
+There is a rumble from deep within the earth, and the room shakes.
+GDT>Entry:    164
+dt
+There is an ugly person staring at you.
+GDT>Entry:    165
+dt
+The mirror is broken into many pieces.
+GDT>Entry:    166
+dt
+Nobody but a greedy surgeon would allow you to attempt that trick.
+GDT>Entry:    167
+dt
+You have broken the mirror.  I hope you have a seven years supply of
+good luck available.
+GDT>Entry:    168
+dt
+Haven't you done enough already?
+GDT>Entry:    169
+dt
+The torch hits the glacier and explodes into a great ball of flame,
+devouring the glacier.  The water from the melting glacier rushes
+downstream, carrying the torch with it.  In place of the glacier,
+there is a passageway leading west.
+GDT>Entry:    170
+dt
+The melting glacier seems to have carried the torch away, leaving
+you in the dark.
+GDT>Entry:    171
+dt
+The glacier is unmoved by your ridiculous attempt.
+GDT>Entry:    172
+dt
+Part of the glacier melts, drowning you under a torrent of water.
+GDT>Entry:    173
+dt
+burned out ivory torch
+GDT>Entry:    174
+dt
+There is a burned out ivory torch here.
+GDT>Entry:    175
+dt
+The basket is raised to the top of the shaft.
+GDT>Entry:    176
+dt
+The basket is lowered to the bottom of the shaft.
+GDT>Entry:    177
+dt
+The cage is securely fastened to the iron chain.
+GDT>Entry:    178
+dt
+You seem unable to affect these spirits.
+GDT>Entry:    179
+dt
+How can you attack a spirit with material objects?
+GDT>Entry:    180
+dt
+The book is open to page 569.
+GDT>Entry:    181
+dt
+As hard as you try, the book cannot be closed.
+GDT>Entry:    182
+dt
+A booming voice says, "Wrong, cretin!", and you notice that you
+have turned into a pile of dust.
+GDT>Entry:    183
+dt
+I'm afraid that you have run out of matches.
+GDT>Entry:    184
+dt
+One of the matches starts to burn.
+GDT>Entry:    185
+dt
+The match is out.
+GDT>Entry:    186
+dt
+The tube refuses to accept anything.
+GDT>Entry:    187
+dt
+The cyclops yawns and stares at the thing that woke him.
+GDT>Entry:    188
+dt
+The cyclops, tired of all your games and trickery, eats you.
+The cyclops says, "Mmm mmm!  Just like mom used to make 'em."
+GDT>Entry:    189
+dt
+The cyclops says, "Mmm mmm!  I love hot peppers!  But oh, could I use
+a drink.  Perhaps I could drink the blood of that thing."  From the
+gleam in his eye, it could be surmised that you are 'that thing'.
+GDT>Entry:    190
+dt
+The cyclops looks tired and quickly falls fast asleep (what did you
+put in that drink, anyway?).
+GDT>Entry:    191
+dt
+The cyclops is apparently not thirsty at the moment and refuses
+your generous gesture.
+GDT>Entry:    192
+dt
+The cyclops may be hungry, but there is a limit.
+GDT>Entry:    193
+dt
+The cyclops is not so stupid as to eat that!
+GDT>Entry:    194
+dt
+The cyclops seems somewhat agitated.
+GDT>Entry:    195
+dt
+The cyclops appears to be getting more agitated.
+GDT>Entry:    196
+dt
+The cyclops is moving about the room, looking for something.
+GDT>Entry:    197
+dt
+The cyclops was looking for salt and pepper.  I think he is gathering
+condiments for his upcoming snack.
+GDT>Entry:    198
+dt
+The cyclops is moving toward you in an unfriendly manner.
+GDT>Entry:    199
+dt
+You have two choices:  1. Leave  2. Become dinner.
+GDT>Entry:    200
+dt
+Your actions don't appear to be doing much harm to the cyclops, but
+they do not exactly lower your insurance premiums, either.
+GDT>Entry:    201
+dt
+The cyclops ignores all injuries to his body with a shrug.
+GDT>Entry:    202
+dt
+The cyclops is rather heavy and doesn't take kindly to being grabbed.
+GDT>Entry:    203
+dt
+You cannot tie the cyclops, although he is fit to be tied.
+GDT>Entry:    204
+dt
+Realizing just in time that you'd be stabbed in the back if you
+tried to take the chalice, you return to the fray.
+GDT>Entry:    205
+dt
+Congratulations!  Unlike the other vandals, who merely stole the
+artist's masterpieces, you have destroyed one.
+GDT>Entry:    206
+dt
+worthless piece of canvas
+GDT>Entry:    207
+dt
+There is a worthless piece of canvas here.
+GDT>Entry:    208
+dt
+With great effort, you open the window far enough to allow passage.
+GDT>Entry:    209
+dt
+The window closes (more easily than it opened).
+GDT>Entry:    210
+dt
+The bolt won't turn with your best effort.
+GDT>Entry:    211
+dt
+The sluice gates open, and water pours through the dam.
+GDT>Entry:    212
+dt
+The sluice gates close, and water starts to collect behind the dam.
+GDT>Entry:    213
+dt
+You can't do that!
+GDT>Entry:    214
+dt
+The grating is locked.
+GDT>Entry:    215
+dt
+The grating opens to reveal trees above you.
+GDT>Entry:    216
+dt
+The grating opens.
+GDT>Entry:    217
+dt
+The grating is unlocked.
+GDT>Entry:    218
+dt
+The door reluctantly opens to reveal a rickety staircase descending
+into darkness.
+GDT>Entry:    219
+dt
+The door swings shut and closes.
+GDT>Entry:    220
+dt
+The door is locked from above.
+GDT>Entry:    221
+dt
+The door cannot be opened.
+GDT>Entry:    222
+dt
+You cannot burn this door.
+GDT>Entry:    223
+dt
+The door is invulnerable.
+GDT>Entry:    224
+dt
+You cannot damage this door.
+GDT>Entry:    225
+dt
+The door is still under warranty.
+GDT>Entry:    226
+dt
+The machine comes to life (figuratively) with a dazzling display
+of colored lights and bizarre noises.  After a few moments, the
+excitement fades.
+GDT>Entry:    227
+dt
+The machine doesn't seem to want to do anything.
+GDT>Entry:    228
+dt
+A force keeps you from taking the bodies.
+GDT>Entry:    229
+dt
+The voice of the guardian of the dungeon booms out from the darkness,
+"Your disrespect has cost you your life!" and places your head on a pole.
+GDT>Entry:    230
+dt
+The lights within the room shut off.
+GDT>Entry:    231
+dt
+The lights within the room come on.
+GDT>Entry:    232
+dt
+Click.
+GDT>Entry:    233
+dt
+There is a rumbling sound, and a stream of water appears to burst
+from the east wall of the room (apparently, a leak has occurred
+in a pipe).
+GDT>Entry:    234
+dt
+The blue button appears to be jammed.
+GDT>Entry:    235
+dt
+The boat must be on the ground to be inflated.
+GDT>Entry:    236
+dt
+The boat inflates and appears seaworthy.
+GDT>Entry:    237
+dt
+You don't have enough lung power to inflate it.
+GDT>Entry:    238
+dt
+This boat will not inflate since some cretin put a hole in it.
+GDT>Entry:    239
+dt
+Well done.  The boat is repaired.
+GDT>Entry:    240
+dt
+There is a hissing sound and the boat deflates.
+GDT>Entry:    241
+dt
+The boat deflates.
+GDT>Entry:    242
+dt
+You can't deflate the boat while you're in it.
+GDT>Entry:    243
+dt
+The boat must be on the ground to be deflated.
+GDT>Entry:    244
+dt
+Very good.
+GDT>Entry:    245
+dt
+The rainbow seems to have become somewhat run of the mill.
+GDT>Entry:    246
+dt
+Suddenly, the rainbow appears to become solid and, I venture,
+walkable (I think the giveaway was the stairs and bannister).
+GDT>Entry:    247
+dt
+The structural integrity of the rainbow seems to have declined
+precipitously, leaving you about 450 feet in the air, supported
+by water vapor.
+GDT>Entry:    248
+dt
+The ballon is fastened to the hook.
+GDT>Entry:    249
+dt
+The balloon is not tied to anything.
+GDT>Entry:    250
+dt
+The wire falls off the hook.
+GDT>Entry:    251
+dt
+The box is imbedded in the wall.
+GDT>Entry:    252
+dt
+What do you expect, BOOM?
+GDT>Entry:    253
+dt
+The box has no door!
+GDT>Entry:    254
+dt
+The box is rusted and will not open.
+GDT>Entry:    255
+dt
+The box is not open, chomper!
+GDT>Entry:    256
+dt
+The wire starts to burn.
+GDT>Entry:    257
+dt
+"Thank you very much," he says.  "I don't believe I've seen a
+# as beautiful.  Follow me."  A door appears on the west end
+of the ledge.  Through the door, you can see a narrow chimney
+sloping downward.  The gnome moves quickly, and he disappears
+from sight.
+GDT>Entry:    258
+dt
+"That wasn't quite what I had in mind", he says, crunching
+the # in his rock hard hands.
+GDT>Entry:    259
+dt
+The gnome appears increasingly nervous.
+GDT>Entry:    260
+dt
+Although the implementers are gone, they foresaw that some cretin
+would tamper with their remains.  Therefore, they took steps to
+prevent this.
+GDT>Entry:    261
+dt
+Unfortunately, we've run out of poles.  Therefore, in punishment for
+your transgression, we shall deprive you of all your valuables, and
+of your life.
+GDT>Entry:    262
+dt
+Congratulations!  You've managed to break all the bottles.  Fortunately
+for your feet, they were made of magic glass and disappear immediately.
+GDT>Entry:    263
+dt
+As you reach for the sphere, an iron cage falls from the ceiling
+to entrap you.  To make matters worse, poisonous gas starts coming
+into the room.
+GDT>Entry:    264
+dt
+As the robot reaches for sphere, an iron cage falls from the
+ceiling.  The robot attempts to fend it off but is trapped below it.
+Alas, the robot short circuits in his vain attempt to escape and
+crushes the sphere beneath him as he falls to the floor.
+GDT>Entry:    265
+dt
+There is a giant spark, and you are fried to a crisp.
+GDT>Entry:    266
+dt
+Nothing seems to happen.
+GDT>Entry:    267
+dt
+The whirring increases in intensity slightly.
+GDT>Entry:    268
+dt
+The whirring decreases in intensity slightly.
+GDT>Entry:    269
+dt
+A dull thump is heard in the distance.
+GDT>Entry:    270
+dt
+The flask breaks into pieces.
+GDT>Entry:    271
+dt
+Here noxious vapors prevent your entry.
+GDT>Entry:    272
+dt
+Just before you pass out, you notice that the vapors from the
+flask's contents are fatal.
+GDT>Entry:    273
+dt
+Suddenly, the room appears to have become very large.
+GDT>Entry:    274
+dt
+The only writing visible is a capital E.  The rest is too small to
+be clearly visible.
+GDT>Entry:    275
+dt
+You can't see through that!
+GDT>Entry:    276
+dt
+The letters appear larger but are still too small to read.
+GDT>Entry:    277
+dt
+The icing, now visible, says "EXPLODE".
+GDT>Entry:    278
+dt
+The icing, now visible, says "EVAPORATE".
+GDT>Entry:    279
+dt
+The icing, now visible, says "ENLARGE".
+GDT>Entry:    280
+dt
+The pool of water evaporates, revealing a tin of rare spices.
+GDT>Entry:    281
+dt
+The door to the room seems to be blocked by sticky orange rubble
+from an explosion.  Probably some careless adventurer was playing
+with blasting cakes.
+GDT>Entry:    282
+dt
+You have been blasted to smithereens (whatever they are).
+GDT>Entry:    283
+dt
+The room around you seems to be getting smaller.
+GDT>Entry:    284
+dt
+The room seems to have become too small to hold you.  It seems
+that the walls are not as compressable as your body, which is
+more or less demolished.
+GDT>Entry:    285
+dt
+The robot is injured (being of shoddy construction) and falls to the
+floor in a pile of garbage, which disintegrates before your eyes.
+GDT>Entry:    286
+dt
+How romantic!
+GDT>Entry:    287
+dt
+If you must... Poof, you're dead!
+GDT>Entry:    288
+dt
+The grue is a sinister, lurking presence in the dark places of the
+earth.  Its favorite diet is adventurers, but its insatiable
+appetite is tempered by its fear of light.  No grue has ever been
+seen by the light of day, and few have survived its fearsome jaws
+to tell the tale.
+GDT>Entry:    289
+dt
+There is no grue here, but I'm sure there is at least one lurking in
+the darkness nearby.  I wouldn't let my light go out if I were you!
+GDT>Entry:    290
+dt
+The bucket rises and comes to a stop.
+GDT>Entry:    291
+dt
+The bucket descends and comes to a stop.
+GDT>Entry:    292
+dt
+You notice that the # has burned out, and that
+the cloth bag is starting to deflate.
+GDT>Entry:    293
+dt
+I hope you have more light than from a #.
+GDT>Entry:    294
+dt
+I didn't realize that adventurers are stupid enough to light a
+# in a room which reeks of coal gas.  Fortunately,
+there is still justice in the world.
+GDT>Entry:    295
+dt
+Oh, dear.  It appears that the smell coming from this room was coal
+gas.  I would have thought twice about carrying a # in here.
+GDT>Entry:    296
+dt
+There is now a puddle in the middle of the #.
+GDT>Entry:    297
+dt
+The water leaks out of the # and evaporates immediately.
+GDT>Entry:    298
+dt
+You won't melt it with a #.
+GDT>Entry:    299
+dt
+The bolt can't be turned with your #.
+GDT>Entry:    300
+dt
+It seems that a # won't do.
+GDT>Entry:    301
+dt
+With a #?
+GDT>Entry:    302
+dt
+The robot gladly takes the # and nods his headlike
+appendage in thanks.
+GDT>Entry:    303
+dt
+A #?  Surely you jest.
+GDT>Entry:    304
+dt
+He who puts his hand to the plow and looks back is not fit for the
+kingdom of winners.  In any case, 'BACK' doesn't work.
+GDT>Entry:    305
+dt
+You'll have to speak up if you expect me to hear you.
+GDT>Entry:    306
+dt
+I don't know how to do that.  I win in all cases.
+GDT>Entry:    307
+dt
+At your service!
+GDT>Entry:    308
+dt
+The Frobozz Company, Ltd., created, owns, and operates this dungeon.
+GDT>Entry:    309
+dt
+Well, FOO, BAR, and BLETCH to you too!
+GDT>Entry:    310
+dt
+It could very well be too late.
+GDT>Entry:    311
+dt
+The dungeon is ALWAYS open (always room for one more).
+GDT>Entry:    312
+dt
+Naturally!
+GDT>Entry:    313
+dt
+AAAARRRRRRGGGGGGGGHHHHHHHHHH!
+GDT>Entry:    314
+dt
+Very good.  Now you can go to the second grade.
+GDT>Entry:    315
+dt
+Have you tried hopping around the dungeon, too?
+GDT>Entry:    316
+dt
+Are you enjoying yourself?
+GDT>Entry:    317
+dt
+Wheeeeee!
+GDT>Entry:    318
+dt
+Do you expect me to applaud?
+GDT>Entry:    319
+dt
+Such language in a high-class establishment like this!
+GDT>Entry:    320
+dt
+You ought to be ashamed of yourself.
+GDT>Entry:    321
+dt
+It's not so bad.  You could have been killed already.
+GDT>Entry:    322
+dt
+Tough shit, asshole.
+GDT>Entry:    323
+dt
+Oh, dear.  Such language from a supposedly winning adventurer!
+GDT>Entry:    324
+dt
+That word is henceforth replaced with DUNGEON.
+GDT>Entry:    325
+dt
+I think you are taking this thing for granite.
+GDT>Entry:    326
+dt
+Brief descriptions.
+GDT>Entry:    327
+dt
+Maximum verbosity.
+GDT>Entry:    328
+dt
+No long descriptions.
+GDT>Entry:    329
+dt
+You can see:  A #.
+GDT>Entry:    330
+dt
+Swimming is not allowed in this dungeon.
+GDT>Entry:    331
+dt
+I don't really see how.
+GDT>Entry:    332
+dt
+I think that swimming is best performed in water.
+GDT>Entry:    333
+dt
+Perhaps it is your head that is swimming.
+GDT>Entry:    334
+dt
+Wasn't he an Indian?
+GDT>Entry:    335
+dt
+I didn't think you would really try to go over the falls in a
+barrel.  It seems that some 450 feet below, you were met by a number
+of unfriendly rocks and boulders, causing your immediate demise.
+GDT>Entry:    336
+dt
+Wasn't he a sailor?
+GDT>Entry:    337
+dt
+The cyclops, hearing the name of his deadly nemesis, flees the room
+by knocking down the wall on the north side of the room.
+GDT>Entry:    338
+dt
+There is a clap of thunder and the east door opens.
+GDT>Entry:    339
+dt
+Well what?
+GDT>Entry:    340
+dt
+If you pray enough, your prayers may be answered.
+GDT>Entry:    341
+dt
+Nothing happens.
+GDT>Entry:    342
+dt
+I don't really know how to do that.
+GDT>Entry:    343
+dt
+Do you wish to leave the game?
+GDT>Entry:    344
+dt
+Underneath the pile of leaves is a grating.
+GDT>Entry:    345
+dt
+Underneath the rug is a closed trap door.
+GDT>Entry:    346
+dt
+Hello.
+GDT>Entry:    347
+dt
+Good day.
+GDT>Entry:    348
+dt
+Nice weather we've been having lately.
+GDT>Entry:    349
+dt
+Goodbye.
+GDT>Entry:    350
+dt
+Here, nothing happens.
+GDT>Entry:    351
+dt
+Nothing happens here.
+GDT>Entry:    352
+dt
+I think that phrase is getting a bit worn out.
+GDT>Entry:    353
+dt
+You seem to be repeating yourself.
+GDT>Entry:    354
+dt
+The # bows his head to you in greeting.
+GDT>Entry:    355
+dt
+I think that only schizophrenics say hello to a #.
+GDT>Entry:    356
+dt
+It is impossible to read in the dark.
+GDT>Entry:    357
+dt
+How does one look through a #?
+GDT>Entry:    358
+dt
+How can I read a #?
+GDT>Entry:    359
+dt
+How, exactly, do I ring that?
+GDT>Entry:    360
+dt
+Ding, dong.
+GDT>Entry:    361
+dt
+I'm not sure that a # can be melted.
+GDT>Entry:    362
+dt
+If you wish, but I can't understand why.
+GDT>Entry:    363
+dt
+Dental hygiene is highly recommended, but I'm not sure what
+you want to brush them with.
+GDT>Entry:    364
+dt
+A nice idea, but with a #?
+GDT>Entry:    365
+dt
+Well, you seem to have been brushing your teeth with some sort of
+glue.  As a result, your mouth gets glued together with your nose,
+and you die of respiratory failure.
+GDT>Entry:    366
+dt
+Unfortunately, the troll can't hear you.
+GDT>Entry:    367
+dt
+Inflating it further would probably burst it.
+GDT>Entry:    368
+dt
+How can you inflate that?
+GDT>Entry:    369
+dt
+Come on, now!
+GDT>Entry:    370
+dt
+The # isn't sleeping.
+GDT>Entry:    371
+dt
+This has no effect.
+GDT>Entry:    372
+dt
+does not seem to do anything useful
+GDT>Entry:    373
+dt
+is not notably useful
+GDT>Entry:    374
+dt
+isn't very interesting
+GDT>Entry:    375
+dt
+doesn't appear worthwhile
+GDT>Entry:    376
+dt
+has no effect
+GDT>Entry:    377
+dt
+doesn't do anything
+GDT>Entry:    378
+dt
+Kicking a # #.
+GDT>Entry:    379
+dt
+Waving a # #.
+GDT>Entry:    380
+dt
+Playing in this way with a # #.
+GDT>Entry:    381
+dt
+Fiddling with a # #.
+GDT>Entry:    382
+dt
+Pushing the # #.
+GDT>Entry:    383
+dt
+I don't think so.
+GDT>Entry:    384
+dt
+This cannot be tied, so it cannot be untied!
+GDT>Entry:    385
+dt
+How can you tie that to anything?
+GDT>Entry:    386
+dt
+You can't tie the # to that.
+GDT>Entry:    387
+dt
+You could certainly never tie the # with that!
+GDT>Entry:    388
+dt
+The # struggles and you cannot tie him up.
+GDT>Entry:    389
+dt
+Why would you tie up a #?
+GDT>Entry:    390
+dt
+You can't turn that.
+GDT>Entry:    391
+dt
+You certainly can't turn it with a #.
+GDT>Entry:    392
+dt
+Digging with the # is slow and tedious.
+GDT>Entry:    393
+dt
+Digging with a # is silly.
+GDT>Entry:    394
+dt
+I don't think that anybody is home.
+GDT>Entry:    395
+dt
+Why knock on a #?
+GDT>Entry:    396
+dt
+It sounds like there is something inside the #.
+GDT>Entry:    397
+dt
+The contents of the # spill out.
+GDT>Entry:    398
+dt
+I can't get to that to move it.
+GDT>Entry:    399
+dt
+You can't move the #.
+GDT>Entry:    400
+dt
+You can't turn that on.
+GDT>Entry:    401
+dt
+It is already on.
+GDT>Entry:    402
+dt
+You can't turn that off.
+GDT>Entry:    403
+dt
+It is already off.
+GDT>Entry:    404
+dt
+The # is now on.
+GDT>Entry:    405
+dt
+The # is now off.
+GDT>Entry:    406
+dt
+It is now pitch black.
+GDT>Entry:    407
+dt
+You must tell me how to do that to a #.
+GDT>Entry:    408
+dt
+The # cannot be opened.
+GDT>Entry:    409
+dt
+Opened.
+GDT>Entry:    410
+dt
+Opening the # reveals:
+GDT>Entry:    411
+dt
+The # cannot be closed.
+GDT>Entry:    412
+dt
+It is already open.
+GDT>Entry:    413
+dt
+It is already closed.
+GDT>Entry:    414
+dt
+Closed.
+GDT>Entry:    415
+dt
+There is a # here.
+GDT>Entry:    416
+dt
+You are carrying a #.
+GDT>Entry:    417
+dt
+It is in the #, which is in the room.
+GDT>Entry:    418
+dt
+It is in the #, which you are carrying.
+GDT>Entry:    419
+dt
+Time passes...
+GDT>Entry:    420
+dt
+The # must be on the ground to be boarded.
+GDT>Entry:    421
+dt
+I suppose you have a theory on boarding a #.
+GDT>Entry:    422
+dt
+You are already in the #, cretin!
+GDT>Entry:    423
+dt
+You are now in the #.
+GDT>Entry:    424
+dt
+You aren't in that!
+GDT>Entry:    425
+dt
+You realize, just in time, that disembarking here would probably
+be fatal.
+GDT>Entry:    426
+dt
+You are on your own feet again.
+GDT>Entry:    427
+dt
+You can't go there without a vehicle.
+GDT>Entry:    428
+dt
+You can't go there in a #.
+GDT>Entry:    429
+dt
+I see nothing special about the #.
+GDT>Entry:    430
+dt
+It is pitch dark.  You are likely to be eaten by a grue.
+GDT>Entry:    431
+dt
+You are in the #.
+GDT>Entry:    432
+dt
+The # has died.
+GDT>Entry:    433
+dt
+The troll, disarmed, cowers in terror, pleading for his life in
+the guttural tongue of the trolls.
+GDT>Entry:    434
+dt
+The troll, now worried about this encounter, recovers his
+bloody axe.
+GDT>Entry:    435
+dt
+An unconscious troll is sprawled on the floor.  All passages out
+of the room are open.
+GDT>Entry:    436
+dt
+A nasty-looking troll, brandishing a bloody axe, blocks all passages
+out of the room.
+GDT>Entry:    437
+dt
+The troll stirs, quickly resuming a fighting stance.
+GDT>Entry:    438
+dt
+The troll spits in your face, saying "Better luck next time".
+GDT>Entry:    439
+dt
+The troll laughs at your puny gesture.
+GDT>Entry:    440
+dt
+The troll, who is remarkably coordinated, catches the #
+GDT>Entry:    441
+dt
+The troll, who is not overly proud, graciously accepts the gift
+GDT>Entry:    442
+dt
+and not having the most discriminating tastes, gleefully eats it.
+GDT>Entry:    443
+dt
+and being for the moment sated, throws it back.  Fortunately, the
+troll has poor control, and the knife falls on the floor.  He does
+not look pleased.
+GDT>Entry:    444
+dt
+Sadly, a # can't be put in a #.
+GDT>Entry:    445
+dt
+You can't take the #.
+GDT>Entry:    446
+dt
+Aren't you forgetting something?
+GDT>Entry:    447
+dt
+That would be a good trick.
+GDT>Entry:    448
+dt
+The # is too big to jump over.
+GDT>Entry:    449
+dt
+You should have looked before you leaped.
+GDT>Entry:    450
+dt
+I'm afraid that leap was a bit much for your weak frame.
+GDT>Entry:    451
+dt
+In the movies, your life would be passing in front of your eyes.
+GDT>Entry:    452
+dt
+Geronimo...
+GDT>Entry:    453
+dt
+I don't think that the # would agree with you.
+GDT>Entry:    454
+dt
+I think you should get that first.
+GDT>Entry:    455
+dt
+Thank you very much.  It really hit the spot.
+GDT>Entry:    456
+dt
+How can I drink that?
+GDT>Entry:    457
+dt
+I'd like to, but I can't get to that.
+GDT>Entry:    458
+dt
+Thank you very much.  I was rather thirsty, probably from all
+this talking.
+GDT>Entry:    459
+dt
+The # catches fire.
+GDT>Entry:    460
+dt
+Unfortunately, you were holding it at the time.
+GDT>Entry:    461
+dt
+You don't have that.
+GDT>Entry:    462
+dt
+The # catches fire and is consumed.
+GDT>Entry:    463
+dt
+I don't think you can burn a #.
+GDT>Entry:    464
+dt
+It doesn't seem to work.
+GDT>Entry:    465
+dt
+Can you unlock a grating with a #?
+GDT>Entry:    466
+dt
+Munging a # #.
+GDT>Entry:    467
+dt
+Trying to kill a # #.
+GDT>Entry:    468
+dt
+Trying to attack a # #.
+GDT>Entry:    469
+dt
+There is nothing here to attack.
+GDT>Entry:    470
+dt
+I've known strange people, but attacking a #?
+GDT>Entry:    471
+dt
+with your bare hands is suicidal
+GDT>Entry:    472
+dt
+with that is very self-destructive
+GDT>Entry:    473
+dt
+You are in perfect health.
+GDT>Entry:    474
+dt
+You have a light wound.
+GDT>Entry:    475
+dt
+You have a serious wound.
+GDT>Entry:    476
+dt
+You have several wounds.
+GDT>Entry:    477
+dt
+You have serious wounds.
+GDT>Entry:    478
+dt
+You are at death's door.
+GDT>Entry:    479
+dt
+You can be killed by one more light wound.
+GDT>Entry:    480
+dt
+You can be killed by a serious wound.
+GDT>Entry:    481
+dt
+You can survive one serious wound.
+GDT>Entry:    482
+dt
+You are strong enough to take several wounds.
+GDT>Entry:    483
+dt
+You have been killed once.
+GDT>Entry:    484
+dt
+You have been killed twice.
+GDT>Entry:    485
+dt
+This gives you the rank of Hacker.
+GDT>Entry:    486
+dt
+This gives you the rank of Wizard.
+GDT>Entry:    487
+dt
+This gives you the rank of Master.
+GDT>Entry:    488
+dt
+This gives you the rank of Winner.
+GDT>Entry:    489
+dt
+This gives you the rank of Hacker.
+GDT>Entry:    490
+dt
+This gives you the rank of Adventurer.
+GDT>Entry:    491
+dt
+This gives you the rank of Junior Adventurer.
+GDT>Entry:    492
+dt
+This gives you the rank of Novice Adventurer.
+GDT>Entry:    493
+dt
+This gives you the rank of Amateur Adventurer.
+GDT>Entry:    494
+dt
+This gives you the rank of Beginner.
+GDT>Entry:    495
+dt
+Your sword is no longer glowing.
+GDT>Entry:    496
+dt
+Your sword is glowing with a faint blue glow.
+GDT>Entry:    497
+dt
+You sword has begun to glow very brightly.
+GDT>Entry:    498
+dt
+Annoyed to be left unarmed in such an obviously dangerous
+neighborhood, the thief slips off into the shadows.
+GDT>Entry:    499
+dt
+The robber, somewhat surprised by this turn of events, nimbly
+recovers his stilletto.
+GDT>Entry:    500
+dt
+His booty remains.
+GDT>Entry:    501
+dt
+As the thief dies, the power of his magic decreases, and his
+treasures reappear:  A #.
+GDT>Entry:    502
+dt
+  A #.
+GDT>Entry:    503
+dt
+There is a suspicious-looking individual, holding a bag, leaning
+against one wall.  He is armed with a vicious-looking stilletto.
+GDT>Entry:    504
+dt
+There is a suspicious-looking individual lying unconscious on the
+ground.  His bag and stilletto seem to have vanished.
+GDT>Entry:    505
+dt
+The robber revives, briefly feigning continued unconsciousness, and
+when he sees his moment, scrambles away from you.
+GDT>Entry:    506
+dt
+Once you got him, what would you do with him?
+GDT>Entry:    507
+dt
+You missed.  The thief makes no attempt to take the knife, although
+it would be a fine addition to the collection in his bag.  He does
+seem angered by your attempt.
+GDT>Entry:    508
+dt
+You evidently frightened the robber, although you missed him.  He flees.
+GDT>Entry:    509
+dt
+You evidently frightened the robber, although you missed him.  He flees,
+but the contents of his bag fall on the floor.
+GDT>Entry:    510
+dt
+Your proposed victim suddenly recovers consciousness.
+GDT>Entry:    511
+dt
+The thief seems rather offended by your offer.  Do you think he's as
+stupid as you are?
+GDT>Entry:    512
+dt
+The thief places the # in his bag and thanks you politely.
+GDT>Entry:    513
+dt
+The candles are not lit.
+GDT>Entry:    514
+dt
+The flame is extinguished.
+GDT>Entry:    515
+dt
+Alas, there's not much left of the candles.  Certainly not enough to
+burn.
+GDT>Entry:    516
+dt
+With what?
+GDT>Entry:    517
+dt
+The candles are lit.
+GDT>Entry:    518
+dt
+The candles are already lit.
+GDT>Entry:    519
+dt
+You have to light them with something that's burning, you know.
+GDT>Entry:    520
+dt
+You realize just in time that the candles are already lit.
+GDT>Entry:    521
+dt
+The heat from the torch is so intense that the candles are vaporized.
+GDT>Entry:    522
+dt
+Oh, no!  You walked into the slavering fangs of a lurking grue.
+GDT>Entry:    523
+dt
+Oh, no!  A fearsome grue slithered into the room and devoured you.
+GDT>Entry:    524
+dt
+You can't go that way.
+GDT>Entry:    525
+dt
+The # is closed.
+GDT>Entry:    526
+dt
+I can't reach that.
+GDT>Entry:    527
+dt
+You aren't carrying that.
+GDT>Entry:    528
+dt
+Dropped.
+GDT>Entry:    529
+dt
+Thrown.
+GDT>Entry:    530
+dt
+You watch as the balloon slowly lands.
+GDT>Entry:    531
+dt
+The balloon has landed.
+GDT>Entry:    532
+dt
+You have landed, but the balloon did not survive.
+GDT>Entry:    533
+dt
+You watch as the balloon slowly descends.
+GDT>Entry:    534
+dt
+The balloon descends.
+GDT>Entry:    535
+dt
+You hear a boom and notice that the balloon is falling to the ground.
+GDT>Entry:    536
+dt
+Your balloon has hit the rim of the volcano, ripping the cloth and
+causing you to drop 500 feet.  Did you get your flight insurance?
+GDT>Entry:    537
+dt
+You watch as the balloon slowly ascends.
+GDT>Entry:    538
+dt
+The balloon ascends.
+GDT>Entry:    539
+dt
+You watch as the balloon slowly floats away.  It seems to be ascending,
+due to its light load.
+GDT>Entry:    540
+dt
+The balloon leaves the ledge.
+GDT>Entry:    541
+dt
+You watch as the balloon slowly lifts off.
+GDT>Entry:    542
+dt
+The balloon slowly rises from the ground.
+GDT>Entry:    543
+dt
+The cloth bag is draped over the side.
+GDT>Entry:    544
+dt
+The balloon is inflated, and there is a # burning
+in the receptacle.
+GDT>Entry:    545
+dt
+The balloon is tied to the hook.
+GDT>Entry:    546
+dt
+I'm afraid you can't control the balloon in that way.
+GDT>Entry:    547
+dt
+You are tied to the ledge.
+GDT>Entry:    548
+dt
+You don't really want to hold a burning #.
+GDT>Entry:    549
+dt
+The receptacle is already occupied.
+GDT>Entry:    550
+dt
+The # burns inside the receptacle.
+GDT>Entry:    551
+dt
+The balloon inflates as it fills with hot air.
+GDT>Entry:    552
+dt
+Not likely.
+GDT>Entry:    553
+dt
+An interesting idea, but...
+GDT>Entry:    554
+dt
+A valiant attempt.
+GDT>Entry:    555
+dt
+You can't be serious.
+GDT>Entry:    556
+dt
+Not a prayer.
+GDT>Entry:    557
+dt
+You already have it.
+GDT>Entry:    558
+dt
+Your load is too heavy.  You will have to leave something behind.
+GDT>Entry:    559
+dt
+Taken.
+GDT>Entry:    560
+dt
+Nice try.
+GDT>Entry:    561
+dt
+I can't do that.
+GDT>Entry:    562
+dt
+I can't reach inside.
+GDT>Entry:    563
+dt
+How can you do that?
+GDT>Entry:    564
+dt
+The # is already in the #.
+GDT>Entry:    565
+dt
+It won't fit.
+GDT>Entry:    566
+dt
+I can't reach the #.
+GDT>Entry:    567
+dt
+The cage shakes and is hurled across the room.
+GDT>Entry:    568
+dt
+"I am sorry but that action is difficult in the absense of a mouth."
+GDT>Entry:    569
+dt
+"My vision is not that good without eyes."
+GDT>Entry:    570
+dt
+"I am only a stupid robot and cannot perform that command."
+GDT>Entry:    571
+dt
+ECHO
+The acoustics of the room change subtly.
+GDT>Entry:    572
+dt
+Almost as soon as the # breathes his last, a cloud of
+sinister black smoke envelops him, and when the fog lifts, the
+carcass has disappeared.
+GDT>Entry:    573
+dt
+The # contains:
+GDT>Entry:    574
+dt
+Your collection of treasures consists of:
+GDT>Entry:    575
+dt
+You are carrying:
+GDT>Entry:    576
+dt
+The # is carrying:
+GDT>Entry:    577
+dt
+By some miracle of elven technology, you have managed to
+stop the leak in the dam.
+GDT>Entry:    578
+dt
+You are empty handed.
+GDT>Entry:    579
+dt
+It is too dark in here to see.
+GDT>Entry:    580
+dt
+#:
+GDT>Entry:    581
+dt
+I could't find anything.
+GDT>Entry:    582
+dt
+I couldn't find any valuables.
+GDT>Entry:    583
+dt
+Someone carrying a large bag is casually leaning against one of the
+walls here.  He does not speak, but it is clear from his aspect that
+the bag will be taken only over his dead body.
+GDT>Entry:    584
+dt
+Your opponent, determining discretion to be the better part of
+valor, decides to terminate this little contretemps.  With a rueful
+nod of his head, he steps backward into the gloom and disappears.
+GDT>Entry:    585
+dt
+The holder of the large bag just left, looking disgusted.
+Fortunately, he took nothing.
+GDT>Entry:    586
+dt
+A 'lean and hungry' gentleman just wandered through.  Finding
+nothing of value, he left disgruntled.
+GDT>Entry:    587
+dt
+A seedy-looking individual with a large bag just wandered through
+the room.  On the way, he quietly abstracted all valuables from the
+room and from your possession, mumbling something about, "Do unto
+others before...".
+GDT>Entry:    588
+dt
+The other occupant (he of the large bag), finding nothing of value,
+left disgusted.
+GDT>Entry:    589
+dt
+The other occupant just left carrying his large bag.  You may not
+have noticed that he robbed you blind first.
+GDT>Entry:    590
+dt
+Off in the distance you hear someone saying, "My, I wonder what this
+fine # is doing here?"
+GDT>Entry:    591
+dt
+You are still recovering from the last blow, so your attack is
+ineffective.
+GDT>Entry:    592
+dt
+Attacking a dead # is pointless.
+GDT>Entry:    593
+dt
+Well, you really did it that time.  Is suicide painless?
+GDT>Entry:    594
+dt
+The # slowly regains his feet.
+GDT>Entry:    595
+dt
+The unconscious # cannot defend himself:  he dies.
+GDT>Entry:    596
+dt
+It appears that the last blow was too much for you.  I'm afraid
+that you are dead.
+GDT>Entry:    597
+dt
+Saved.
+GDT>Entry:    598
+dt
+Save and restore are disabled.
+GDT>Entry:    599
+dt
+Restored.
+GDT>Entry:    600
+dt
+Your save file is obsolete and cannot be restored.
+GDT>Entry:    601
+dt
+I don't understand that.
+GDT>Entry:    602
+dt
+You cannot talk to that!
+GDT>Entry:    603
+dt
+You cannot talk through another person.
+GDT>Entry:    604
+dt
+Please input the entire command again.
+GDT>Entry:    605
+dt
+Fortunately, you still have a #.
+GDT>Entry:    606
+dt
+You are in a room with an exit on the west side, and a staircase
+leading up.
+GDT>Entry:    607
+dt
+A cyclops, who looks prepared to eat horses (much less mere
+adventurers), blocks the staircase.  From his state of health
+and the bloodstains on the wall, you gather that he is not very
+friendly, though he likes people.
+GDT>Entry:    608
+dt
+The cyclops is standing in the corner, eyeing you closely.  I don't
+think he likes you very much.  He looks extremely hungry, even for
+a cyclops.
+GDT>Entry:    609
+dt
+The cyclops, having eaten the hot peppers, appears to be gasping.
+His enflamed tongue protrudes from his man-sized mouth.
+GDT>Entry:    610
+dt
+The cyclops, perhaps affected by a drug in your drink, is sleeping
+blissfully at the foot of the stairs.
+GDT>Entry:    611
+dt
+On the north of the room is a wall which used to be solid, but which
+now has a cyclops-shaped hole in it.
+GDT>Entry:    612
+dt
+The bottle is closed.
+GDT>Entry:    613
+dt
+The bottle is already full.
+GDT>Entry:    614
+dt
+The bottle is now full of water.
+GDT>Entry:    615
+dt
+The water slips through your fingers.
+GDT>Entry:    616
+dt
+Too many prepositions.
+GDT>Entry:    617
+dt
+Too many objects.
+GDT>Entry:    618
+dt
+I can't see one here.
+GDT>Entry:    619
+dt
+Which one do you mean?
+GDT>Entry:    620
+dt
+I can't reach that from inside the #.
+GDT>Entry:    621
+dt
+What should I do with the #?
+GDT>Entry:    622
+dt
+Huh?
+GDT>Entry:    623
+dt
+You must supply a direct object.
+GDT>Entry:    624
+dt
+You must supply an indirect object.
+GDT>Entry:    625
+dt
+Normally, I would offer to patch you up, but I'm ashamed to say my
+abilities are not equal to dealing with your present condition.
+Please let me express my profoundest regrets.
+GDT>Entry:    626
+dt
+The thief, being temporarily incapacitated, is unable to acknowledge
+your greeting with his usual graciousness.
+GDT>Entry:    627
+dt
+The thief is taken aback by your unexpected generosity but accepts
+the # and stops to admire its beauty.
+GDT>Entry:    628
+dt
+The # is open, but I can't tell what's beyond it.
+GDT>Entry:    629
+dt
+The # is empty.
+GDT>Entry:    630
+dt
+I don't know how to look inside a #.
+GDT>Entry:    631
+dt
+There is nothing interesting there.
+GDT>Entry:    632
+dt
+I don't really see how.
+GDT>Entry:    633
+dt
+The implementers are dead;  therefore, they do not respond.
+GDT>Entry:    634
+dt
+You can't wind a #.
+GDT>Entry:    635
+dt
+You hear in the distance the chirping of a song bird.
+GDT>Entry:    636
+dt
+A metallic voice says, "Hello, Intruder!  Your unauthorized presence
+in the vault area of the Bank of Zork has set off all sorts of nasty
+surprises, several of which seem to have been fatal.  This message
+brought to you by the Frobozz Magic Alarm Company."
+GDT>Entry:    637
+dt
+An epicene Gnome of Zurich, wearing a three-piece suit and carrying a
+safety deposit box, materializes in the room.  "You seem to have
+forgotten to deposit your valuables," he says, tapping the lid of the
+box impatiently.  "We don't usually allow customers to use the boxes
+here, but we can make this ONE exception, I suppose..."  He looks
+askance at you over his wire-rimmed bifocals.
+GDT>Entry:    638
+dt
+The gnome looks impatient:  "I may have another customer waiting;
+you'll just have to fend for yourself, I'm afraid."  He disappears,
+leaving you alone in the bare room.
+GDT>Entry:    639
+dt
+Talk about eating rich foods!
+GDT>Entry:    640
+dt
+Nothing like having money to burn!
+GDT>Entry:    641
+dt
+"I wouldn't put THAT in a safety deposit box," remarks the gnome with
+disdain, tossing it over his shoulder, where it disappears with an
+understated "pop".
+GDT>Entry:    642
+dt
+The gnome carefully places the # in the
+deposit box.  "Let me show you the way out," he says, making it clear
+that he will be pleased to see the last of you.  Then, you are momentarily
+disoriented, and when you recover, you are back at the Bank Entrance.
+GDT>Entry:    643
+dt
+The gnome says, "Well, I never!" and disappears with a snap of his
+fingers, leaving you alone.
+GDT>Entry:    644
+dt
+The gnome appears increasingly impatient.
+GDT>Entry:    645
+dt
+There is an unpleasant grinding noise from inside the canary.
+GDT>Entry:    646
+dt
+The canary chirps blithely, if somewhat tinnily, for a short time.
+GDT>Entry:    647
+dt
+The canary chirps, slightly off key, an aria from a forgotten opera.
+From out of the greenery flies a lovely song bird.  It perches on a
+limb just over your head and opens its beak to sing.  As it does so,
+a beautiful brass bauble drops from its mouth, bounces off the top
+of your head, and lands glimmering in the grass.  As the canary winds
+down, the song bird flies away.
+GDT>Entry:    648
+dt
+The cliff is too steep for climbing.
+GDT>Entry:    649
+dt
+The egg is already open.
+GDT>Entry:    650
+dt
+There is no obvious way to open the egg.
+GDT>Entry:    651
+dt
+I doubt you could do that without damaging it.
+GDT>Entry:    652
+dt
+The egg is now open, but the clumsiness of your attempt has
+seriously diminished its esthetic appeal.
+GDT>Entry:    653
+dt
+The concept of using a # is certainly original.
+GDT>Entry:    654
+dt
+Not to say that using a # isn't original either...
+GDT>Entry:    655
+dt
+You rather indelicate handling of the egg has caused it some damage.
+The egg is now open.
+GDT>Entry:    656
+dt
+Climbing the walls is of no avail.
+GDT>Entry:    657
+dt
+Bizarre!
+GDT>Entry:    658
+dt
+The egg falls to the ground and is seriously damaged.
+GDT>Entry:    659
+dt
+The # falls to the ground.
+GDT>Entry:    660
+dt
+You are about ten feet above the ground nestled among some large
+branches.  The nearest branch above you is beyond your reach.
+GDT>Entry:    661
+dt
+On the ground below you can see:
+GDT>Entry:    662
+dt
+I can't see any wall here.
+GDT>Entry:    663
+dt
+That cannot be turned.
+GDT>Entry:    664
+dt
+You would be lost without me.
+GDT>Entry:    665
+dt
+You don't have the #.
+GDT>Entry:    666
+dt
+The song bird is not here, but it is probably nearby.
+GDT>Entry:    667
+dt
+I can't see any song bird here.
+GDT>Entry:    668
+dt
+You feel somewhat disoriented as you pass through...
+GDT>Entry:    669
+dt
+You hit your head against the # as you attempt this feat.
+GDT>Entry:    670
+dt
+You can't go more than part way through the curtain.
+GDT>Entry:    671
+dt
+That would involve quite a contortion!
+GDT>Entry:    672
+dt
+You are in it, turkey!
+GDT>Entry:    673
+dt
+As you try, your hand seems to go through it.
+GDT>Entry:    674
+dt
+The # goes through it.
+GDT>Entry:    675
+dt
+The # passes through the wall and vanishes.
+GDT>Entry:    676
+dt
+The curtain dims slightly as the # passes through.
+GDT>Entry:    677
+dt
+I can't do that with everything at once.
+GDT>Entry:    678
+dt
+There is a wall there.
+GDT>Entry:    679
+dt
+There is no way up.
+GDT>Entry:    680
+dt
+There is no way down.
+GDT>Entry:    681
+dt
+You are in part of the long hallway.  The east and west walls are
+dressed stone.  In the center of the hall is a shallow stone channel.
+In the center of the room the channel widens into a large hole around
+which is engraved a compass rose.
+GDT>Entry:    682
+dt
+Somewhat to the south, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+GDT>Entry:    683
+dt
+Somewhat to the north, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+GDT>Entry:    684
+dt
+A passage enters from the south.
+GDT>Entry:    685
+dt
+The Guardians awake and, in perfect unison, destroy you with
+their stone bludgeons.  Satisfied, they resume their posts.
+GDT>Entry:    686
+dt
+To the north and south are large hallways.
+GDT>Entry:    687
+dt
+To the north is a large hallway.
+GDT>Entry:    688
+dt
+You are inside a rectangular box of wood whose structure is rather
+complicated.  Four sides and the roof are filled in, and the floor
+is open.
+   As you face the side opposite the entrance, two short sides of
+carved and polished wood are to your left and right.  The left panel
+is mahogany, the right pine.  The wall you face is red on its left
+half and black on its right.  On the entrance side, the wall is white
+opposite the red part of the wall it faces, and yellow opposite the
+black section.  The painted walls are at least twice the length of
+the unpainted ones.  The ceiling is painted blue.
+   In the floor is a stone channel about six inches wide and a foot
+deep.  The channel is oriented in a north-south direction.  In the
+exact center of the room the channel widens into a circular
+depression perhaps two feet wide.  Incised in the stone around this
+area is a compass rose.
+   Running from one short wall to the other at about waist height
+is a wooden bar, carefully carved and drilled.  This bar is pierced
+in two places.  The first hole is in the center of the bar (and thus
+in the center of the room).  The second is at the left end of the room
+(as you face opposite the entrance).  Through each hole runs a wooden
+pole.
+   The pole at the left end of the bar is short, extending about a
+GDT>Entry:    689
+dt
+foot above the bar, and ends in a hand grip.  The pole is resting on
+the stone floor.
+GDT>Entry:    690
+dt
+foot above the bar, and ends in a hand grip.  The pole has been
+dropped into a hole carved in the stone floor.
+GDT>Entry:    691
+dt
+foot above the bar, and ends in a hand grip.  The pole has been lifted
+out of a hole carved in the stone floor.  There is evidently enough
+friction to keep the pole from dropping back down.
+GDT>Entry:    692
+dt
+foot above the bar, and ends in a hand grip.  The pole has been
+dropped into the stone channel incised in the floor.
+GDT>Entry:    693
+dt
+foot above the bar, and ends in a hand grip.  The pole is positioned
+above the stone channel in the floor.
+GDT>Entry:    694
+dt
+   The long pole at the center of the bar extends from the ceiling
+through the bar to the circular area in the stone channel.  The
+bottom end of this pole has a T-bar a bit less than two feet long
+attached to it.  On the T-bar is carved an arrow.  The arrow and
+T-bar are pointing #.
+GDT>Entry:    695
+dt
+north
+GDT>Entry:    696
+dt
+northeast
+GDT>Entry:    697
+dt
+east
+GDT>Entry:    698
+dt
+southeast
+GDT>Entry:    699
+dt
+south
+GDT>Entry:    700
+dt
+southwest
+GDT>Entry:    701
+dt
+west
+GDT>Entry:    702
+dt
+northwest
+GDT>Entry:    703
+dt
+You are in a small room, with narrow passages exiting to the north
+and south.  A narrow red beam of light crosses the room at the north
+end, inches above the floor.
+GDT>Entry:    704
+dt
+You are in a small room, with narrow passages exiting to the north
+and south.  A narrow red beam of light crosses the room at the north
+end, inches above the floor.  The beam is stopped halfway across the
+room by a # lying on the floor.
+GDT>Entry:    705
+dt
+Though large and esthetically pleasing, the crypt is empty;  the
+sarcophagi, bodies, and rich treasures to be expected in a tomb of
+this magnificence are missing.  Inscribed on the wall is the motto of
+the implementers, "Feel Free".  There is a door leading out of the
+crypt to the south.  The door is #.
+GDT>Entry:    706
+dt
+You are in an east-west corridor which turns north at its eastern
+and western ends.  The walls of the corridor are marble.  An
+additional passage leads south at the center of the corridor.
+GDT>Entry:    707
+dt
+In the center of the north wall of the passage is a bronze door
+which is #.
+GDT>Entry:    708
+dt
+You are in a narrow north-south corridor.  At the south end is a door
+and at the north end is an east-west corridor.  The door is #.
+GDT>Entry:    709
+dt
+You are in a north-south hallway which ends in a large wooden door.
+GDT>Entry:    710
+dt
+The wooden door has a barred panel in it at about head height.  The
+panel is #, and the door is #.
+GDT>Entry:    711
+dt
+You are in a large east-west corridor which opens out to a northern
+parapet at its center.  You can see flames and smoke as you peer
+towards the parapet.  The corridor turns south at its east and west
+ends, and due south is a massive wooden door.  In the door is a small
+window barred with iron.  The door is #.
+GDT>Entry:    712
+dt
+You are standing behind a stone retaining wall which rims a large
+parapet overlooking a fiery pit.  It is difficult to see through the
+smoke and flame which fills the pit, but it seems to be more or less
+bottomless.  It also extends upwards out of sight.  The pit itself
+is of roughly dressed stone and is circular in shape.  It is about
+two hundred feet in diameter.  The flames generate considerable heat,
+so it is rather uncomfortable standing here.
+   There is an object here which looks like a sundial.  On it are
+an indicator arrow and (in the center) a large button.  On the face
+of the dial are numbers "one" through "eight".  The indicator points
+to the number "#".
+GDT>Entry:    713
+dt
+one
+GDT>Entry:    714
+dt
+two
+GDT>Entry:    715
+dt
+three
+GDT>Entry:    716
+dt
+four
+GDT>Entry:    717
+dt
+five
+GDT>Entry:    718
+dt
+six
+GDT>Entry:    719
+dt
+seven
+GDT>Entry:    720
+dt
+eight
+GDT>Entry:    721
+dt
+You are in a featureless prison cell.  You can see only the flames
+and smoke from the pit out of the small window in the closed door
+in front of you.
+GDT>Entry:    722
+dt
+You are in a featureless prison cell.  You can see the east-west
+corridor outside the open wooden door in front of you.
+GDT>Entry:    723
+dt
+Behind you is a bronze door which seems to be #.
+GDT>Entry:    724
+dt
+You are in a featureless prison cell.  Its wooden door is securely
+fastened, and you can see only the flames and smoke of the pit out
+its small window.
+GDT>Entry:    725
+dt
+You are in a featureless prison cell.  Its wooden door is securely
+fastened, and you can see only the flames and smoke of the pit out
+its small window.  On the other side of the cell is a bronze door
+which seems to be #.
+GDT>Entry:    726
+dt
+   As you gleefully examine your new-found riches, the dungeon
+master himself materializes beside you and says, "Now that you have
+solved all the mysteries of the dungeon, it is time for you to assume
+your rightfully-earned place in the scheme of things.  Long have I
+waited for one capable of releasing me from my burden!"  He taps you
+lightly on the head with his staff and mumbles a few well-chosen spells.
+You feel yourself changing, growing older and more stooped.  For a
+moment there are two identical mages staring at each other among the
+treasures, then you watch as your counterpart dissolves into a mist
+and disappears, a sardonic grin on his face.
+GDT>Entry:    727
+dt
+Suddenly, as you wait in the dark, you begin to feel somewhat
+disoriented.  The feeling passes, but something seems different.
+As you regain your composure, the cloaked figure appears before you
+and says, "You are now ready to face the ultimate challenge of
+Zork.  Should you wish to do this somewhat more quickly in the
+future, you will be given a magic phrase which will at any time
+transport you by magic to this point.  To select the phrase, say
+	INCANT, <word>
+and you will be told your own magic phrase to use by saying
+	INCANT, <phrase>
+Good luck, and choose wisely!"
+GDT>Entry:    728
+dt
+The button pops back to its original position.
+GDT>Entry:    729
+dt
+The mirror quietly swings shut.
+GDT>Entry:    730
+dt
+The pine wall closes quietly.
+GDT>Entry:    731
+dt
+The structure shakes slightly but doesn't move.
+GDT>Entry:    732
+dt
+The short pole prevents the structure from rotating.
+GDT>Entry:    733
+dt
+The movement of the structure alerts the Guardians.
+GDT>Entry:    734
+dt
+The arrow on the compass rose now indicates #.
+GDT>Entry:    735
+dt
+The structure rocks back and forth slightly but doesn't move.
+GDT>Entry:    736
+dt
+The pine wall swings open.
+GDT>Entry:    737
+dt
+The pine door opens into the field of view of the Guardians.
+GDT>Entry:    738
+dt
+The structure has reached the end of the stone channel and won't
+budge.
+GDT>Entry:    739
+dt
+The structure slides # and stops over another compass rose.
+GDT>Entry:    740
+dt
+The structure wobbles # and stops over another compass rose.
+GDT>Entry:    741
+dt
+The structure wobbles as it moves, alerting the Guardians.
+GDT>Entry:    742
+dt
+The Guardian notices a wooden structure creeping by, and his
+suspicions are aroused.
+GDT>Entry:    743
+dt
+Suddenly, the Guardians realize that someone is trying to sneak by
+them in the structure.  They awake and, in perfect unison, hammer
+the box and its contents (including you) to a pulp.  Satisfied, they
+resume their posts.
+GDT>Entry:    744
+dt
+A Guardian notices the open side of the structure, and his suspicions
+are aroused.
+GDT>Entry:    745
+dt
+Attacking the Guardians is about as futile as attacking a stone wall.
+Unfortunately for you, your futile blow attracts their attention, and
+they manage to dispatch you effortlessly.
+GDT>Entry:    746
+dt
+The statues are impassive.
+GDT>Entry:    747
+dt
+The dungeon master is taken momentarily by surprise.  He dodges your
+blow and then, with a disappointed expression on his face, he raises
+his staff and traces a complicated pattern in the air.  As it
+completes you crumble into dust.
+GDT>Entry:    748
+dt
+"I'm willing to accompany you, but not to ride in your pocket!"
+GDT>Entry:    749
+dt
+The pole is now slightly above the floor.
+GDT>Entry:    750
+dt
+The pole cannot be raised further.
+GDT>Entry:    751
+dt
+The pole cannot be lowered further.
+GDT>Entry:    752
+dt
+The pole is lowered into the channel.
+GDT>Entry:    753
+dt
+The pole is lowered into the stone hole.
+GDT>Entry:    754
+dt
+The pole is already resting on the floor.
+GDT>Entry:    755
+dt
+The pole now rests on the stone floor.
+GDT>Entry:    756
+dt
+The button becomes depressed.
+GDT>Entry:    757
+dt
+The button pops back out.
+GDT>Entry:    758
+dt
+The button is already depressed.
+GDT>Entry:    759
+dt
+No doubt you have a bottle of moonbeams as well.
+GDT>Entry:    760
+dt
+The beam is now interrupted by a # lying on the floor.
+GDT>Entry:    761
+dt
+You can't break the beam with a #.
+GDT>Entry:    762
+dt
+The # already breaks the beam.
+GDT>Entry:    763
+dt
+I see no bronze door here.
+GDT>Entry:    764
+dt
+The bronze door opens.
+GDT>Entry:    765
+dt
+The bronze door closes.
+GDT>Entry:    766
+dt
+On the other side of the door is a narrow passage which opens out
+into a larger area.
+GDT>Entry:    767
+dt
+The door won't budge.
+GDT>Entry:    768
+dt
+The knock reverberates along the hall.  For a time it seems there
+will be no answer.  Then you hear someone unlatching the small wooden
+panel.  Through the bars of the great door, the wrinkled face of an
+old man appears.  He gazes down at you and intones as follows:
+   "I am the master of the dungeon, whose task it is to insure
+that none but the most scholarly and masterful adventurers are
+admitted into the secret realms of the dungeon.  To ascertain whether
+you meet the stringent requirements laid down by the Great
+Implementers, I will ask three questions which should be easy for
+one of your reputed excellence to answer.  You have undoubtedly
+discovered the answers during your travels through the dungeon.
+Should you answer each of these questions correctly within five
+attempts, then I am obliged to acknowledge your skill and daring and
+admit you to these regions.
+   "All answers should be in the form 'ANSWER, <answer>'."
+GDT>Entry:    769
+dt
+The booming voice asks:
+GDT>Entry:    770
+dt
+"From which room can one enter the robber's hideaway without passing
+through the cyclops room?"
+GDT>Entry:    771
+dt
+"Beside the Temple, to which room is it possible to go from the Altar?"
+GDT>Entry:    772
+dt
+"What is the absolute minimum specified value of the Zorkmid
+treasures, in Zorkmids?"
+GDT>Entry:    773
+dt
+"What object is of use in determining the function of the iced cakes?"
+GDT>Entry:    774
+dt
+"What can be done to the mirror that is useful?"
+GDT>Entry:    775
+dt
+"The taking of which object offends the ghosts?"
+GDT>Entry:    776
+dt
+"What object in the dungeon is haunted?"
+GDT>Entry:    777
+dt
+"In which room is the phrase 'Hello sailor' useful?"
+GDT>Entry:    778
+dt
+The door is securely fastened.
+GDT>Entry:    779
+dt
+The wooden door opens.
+GDT>Entry:    780
+dt
+The wooden door closes.
+GDT>Entry:    781
+dt
+The dungeon master says, "I will stay."
+GDT>Entry:    782
+dt
+The dungeon master says, "I will follow."
+GDT>Entry:    783
+dt
+There is no reply.
+GDT>Entry:    784
+dt
+"I prefer to stay where I am, thank you."
+GDT>Entry:    785
+dt
+"I am not permitted to enter the prison cell."
+GDT>Entry:    786
+dt
+"I cannot perform that action for you."
+GDT>Entry:    787
+dt
+This gives you the rank of Dungeon Master.
+GDT>Entry:    788
+dt
+This gives you the rank of Super Hacker.
+GDT>Entry:    789
+dt
+This gives you the rank of Master Hacker.
+GDT>Entry:    790
+dt
+This gives you the rank of Advanced Hacker.
+GDT>Entry:    791
+dt
+This gives you the rank of Hacker.
+GDT>Entry:    792
+dt
+You are in the Tomb of the Unknown Implementer.  A hollow voice
+says, "That's not a bug, it's a feature!"
+In the north wall of the room is the Crypt of the Implementers.  It
+is made of the finest marble and is apparently large enough for four
+headless corpses.  The crypt is #.  Above the entrance is the
+cryptic inscription:
+
+		"Feel Free".
+GDT>Entry:    793
+dt
+The door of the crypt is extremely heavy, but it opens easily.
+GDT>Entry:    794
+dt
+The crypt is already open.
+GDT>Entry:    795
+dt
+The crypt is already closed.
+GDT>Entry:    796
+dt
+The crypt is closed.
+GDT>Entry:    797
+dt
+The dial spins and comes to a stop pointing at "#".
+GDT>Entry:    798
+dt
+There is no answer.
+GDT>Entry:    799
+dt
+No one seems to be listening.
+GDT>Entry:    800
+dt
+The dungeon master says, "Excellent."
+GDT>Entry:    801
+dt
+The dungeon master says, "You are wrong.  You have four more chances."
+GDT>Entry:    802
+dt
+The dungeon master says, "You are wrong.  You have three more chances."
+GDT>Entry:    803
+dt
+The dungeon master says, "You are wrong.  You have two more chances."
+GDT>Entry:    804
+dt
+The dungeon master says, "You are wrong.  You have one more chance."
+GDT>Entry:    805
+dt
+The mirror is closed.
+GDT>Entry:    806
+dt
+You must specify what to set the dial to.
+GDT>Entry:    807
+dt
+The dial face contains only numbers.
+GDT>Entry:    808
+dt
+The dial now points to "#".
+GDT>Entry:    809
+dt
+The button depresses with a slight click and pops back.
+GDT>Entry:    810
+dt
+The cell door is now closed.
+GDT>Entry:    811
+dt
+You notice that the dungeon master does not follow.
+GDT>Entry:    812
+dt
+The dungeon master catches up with you.
+GDT>Entry:    813
+dt
+The dungeon master follows you.
+GDT>Entry:    814
+dt
+There is a wooden wall blocking your way.
+GDT>Entry:    815
+dt
+There is a large mirror blocking your way.
+GDT>Entry:    816
+dt
+There is a large broken mirror blocking your way.
+GDT>Entry:    817
+dt
+The structure blocks your way.
+GDT>Entry:    818
+dt
+As you leave, the door swings shut.
+GDT>Entry:    819
+dt
+You are in a narrow room whose west wall is a large mirror.
+GDT>Entry:    820
+dt
+You are in a narrow room whose east wall is a large mirror.
+GDT>Entry:    821
+dt
+You are in a narrow room whose west wall is a large wooden panel
+which once contained a mirror.
+GDT>Entry:    822
+dt
+You are in a narrow room whose east wall is a large wooden panel
+which once contained a mirror.
+GDT>Entry:    823
+dt
+The mirror is mounted on a panel which has been opened outward.
+GDT>Entry:    824
+dt
+The panel has been opened outward.
+GDT>Entry:    825
+dt
+The opposite wall is solid rock.
+GDT>Entry:    826
+dt
+The dungeon master says, "You are wrong."  The dungeon master,
+obviously disappointed in your lack of knowledge, shakes his head
+and mumbles, "I guess they'll let anyone in the dungeon these days."
+With that, he departs.
+GDT>Entry:    827
+dt
+The dungeon master, obviously pleased, says, "You are indeed a
+master of lore.  I am proud to be at your service."  The massive
+wooden door swings open, and the master motions for you to enter.
+GDT>Entry:    828
+dt
+Saves are not permitted during the endgame.
+GDT>Entry:    829
+dt
+Restores are not permitted during the endgame.
+GDT>Entry:    830
+dt
+The structure rotates clockwise.
+GDT>Entry:    831
+dt
+The structure rotates counterclockwise.
+GDT>Entry:    832
+dt
+I can't see a mirror here.
+GDT>Entry:    833
+dt
+I don't see any way to open the mirror here.
+GDT>Entry:    834
+dt
+The mirror breaks, revealing a panel behind it.
+GDT>Entry:    835
+dt
+The mirror has already been broken.
+GDT>Entry:    836
+dt
+The mirror is mounted on a wooden panel which moves slightly inward
+as you push and back out as you let go.  The mirror feels rather
+fragile.
+GDT>Entry:    837
+dt
+The mirror is unyielding but seems rather fragile.
+GDT>Entry:    838
+dt
+I can't see a panel here.
+GDT>Entry:    839
+dt
+I don't see any way to open the panel here.
+GDT>Entry:    840
+dt
+To break the panel you would have to break the mirror first.
+GDT>Entry:    841
+dt
+The panel is not that easily destroyed.
+GDT>Entry:    842
+dt
+The wooden panel moves slightly inward as you push and back out
+when you let go.
+GDT>Entry:    843
+dt
+The panel is unyielding.
+GDT>Entry:    844
+dt
+A disheveled adventurer stares back at you.
+GDT>Entry:    845
+dt
+The mirror is broken into little pieces.
+GDT>Entry:    846
+dt
+Shards of a broken mirror are dangerous to play with.
+GDT>Entry:    847
+dt
+The # side of the room is divided by a wooden wall into small
+GDT>Entry:    848
+dt
+hallways to the #east and #west.
+GDT>Entry:    849
+dt
+A large mirror fills the # side of the hallway.
+GDT>Entry:    850
+dt
+A large panel fills the # side of the hallway.
+GDT>Entry:    851
+dt
+The shattered pieces of a mirror cover the floor.
+GDT>Entry:    852
+dt
+The corridor continues north.
+GDT>Entry:    853
+dt
+The corridor continues south.
+GDT>Entry:    854
+dt
+The corridor continues north and south.
+GDT>Entry:    855
+dt
+Incantations are useless once you have gotten this far.
+GDT>Entry:    856
+dt
+That incantation seems to have been a failure.
+GDT>Entry:    857
+dt
+Sorry, only one incantation to a customer.
+GDT>Entry:    858
+dt
+That spell has no obvious effect.
+GDT>Entry:    859
+dt
+As the last syllable of your spell fades into silence, darkness
+envelops you, and the earth shakes.  Then all is quiet.
+GDT>Entry:    860
+dt
+The structure won't budge.
+GDT>Entry:    861
+dt
+You are in a room with an exit to the north and a steel door to the east.
+GDT>Entry:    862
+dt
+You are in a room with an exit to the north and a passage to the east.
+GDT>Entry:    863
+dt
+The card slides easily into the slot and vanishes, and the steel
+door slides open, revealing a passageway to the west.  A moment
+later, a previously unseen sign flashes:
+	"Unauthorized/Illegal Use of Pass Card -- Card Confiscated"
+GDT>Entry:    864
+dt
+The item vanishes into the slot.  A moment later, a previously
+unseen sign flashes "Garbage In, Garbage Out".  The #,
+now atomized, spews through the slot.
+GDT>Entry:    865
+dt
+I can't see any ladder here.
+GDT>Entry:    866
+dt
+Come, come!
+GDT>Entry:    867
+dt
+You hit your head on the ceiling and fall off the ladder.
+GDT>Entry:    868
+dt
+You are in a small square room bounded to the north and west with
+marble walls and to the east and south with sandstone walls.
+GDT>Entry:    869
+dt
+It appears the thief was correct.
+GDT>Entry:    870
+dt
+In the ceiling above you is a large circular opening.
+GDT>Entry:    871
+dt
+The center of the floor is noticeably depressed here.
+GDT>Entry:    872
+dt
+The west wall here has a large steel door at its center.  On one side
+of the door is a small slit.
+GDT>Entry:    873
+dt
+The west wall here has a large opening at its center.  On one side
+of the opening in a small slit.
+GDT>Entry:    874
+dt
+There is a ladder here, firmly attached to the east wall.
+GDT>Entry:    875
+dt
+There is a ladder here, firmly attached to the west wall.
+GDT>Entry:    876
+dt
+There is only a passage in that direction.
+GDT>Entry:    877
+dt
+The wall does not budge.
+GDT>Entry:    878
+dt
+The wall slides forward and you follow it...
+The architecture of this region is getting complex, so that further
+descriptions will be diagrams of the immediate vicinity in a 3x3
+grid.  The walls here are rock, but of two different types - sandstone
+and marble.  The following notations will be used:
+			..  = current position (middle of grid)
+			MM  = marble wall
+			SS  = sandstone wall
+			??  = unknown (blocked by walls).
+GDT>Entry:    879
+dt
+The wall slides forward and you follow it to the following position:
+GDT>Entry:    880
+dt
+Your position is as follows:
+GDT>Entry:    881
+dt
+The exit is too far above your head.
+GDT>Entry:    882
+dt
+With the help of the ladder, you exit the puzzle.
+GDT>Entry:    883
+dt
+Don't be lazy, type the command yourself.
+GDT>Entry:    884
+dt
+In the MDL sources, NOOBJ is described as a "hack".  As we are
+above such practices, NOOBJ is not implemented.
+GDT>Entry:    885
+dt
+The grating closes.
+GDT>Entry:    886
+dt
+Your swing misses the # by an inch.
+GDT>Entry:    887
+dt
+A mightly blow, but it misses the # by a mile.
+GDT>Entry:    888
+dt
+You charge, but the # jumps nimbly aside.
+GDT>Entry:    889
+dt
+Clang!  Crash!  The # parries.
+GDT>Entry:    890
+dt
+A good stroke, but it's too slow, the # dodges.
+GDT>Entry:    891
+dt
+Your sword crashes down, knocking the # into dreamland.
+GDT>Entry:    892
+dt
+The # is battered into unconsciousness.
+GDT>Entry:    893
+dt
+A furious exchange, and the # is knocked out.
+GDT>Entry:    894
+dt
+It's curtains for the # as your sword removes his head.
+GDT>Entry:    895
+dt
+The fatal blow strikes the # square in the heart:  he dies.
+GDT>Entry:    896
+dt
+The # takes a final blow and slumps to the floor dead.
+GDT>Entry:    897
+dt
+The # is struck on the arm, blood begins to trickle down.
+GDT>Entry:    898
+dt
+Your sword pinks the # on the wrist, but it's not serious.
+GDT>Entry:    899
+dt
+Your stroke lands, but it was only the flat of the blade.
+GDT>Entry:    900
+dt
+The blow lands, making a shallow gash in the #'s arm.
+GDT>Entry:    901
+dt
+The # receives a deep gash in his side.
+GDT>Entry:    902
+dt
+A savage blow on the thigh!  The # is stunned but can still fight.
+GDT>Entry:    903
+dt
+Slash!  Your blow lands!  That one hit an artery, it could be serious!
+GDT>Entry:    904
+dt
+The # is staggered and drops to his knees.
+GDT>Entry:    905
+dt
+The # is momentarily disoriented and can't fight back.
+GDT>Entry:    906
+dt
+The force of your blow knocks the # back, stunned.
+GDT>Entry:    907
+dt
+The #'s weapon is knocked to the floor, leaving him unarmed.
+GDT>Entry:    908
+dt
+Your stab misses the # by an inch.
+GDT>Entry:    909
+dt
+A good slash, but it misses the # by a mile.
+GDT>Entry:    910
+dt
+You charge, but the # jumps nimbly aside.
+GDT>Entry:    911
+dt
+A quick stroke, but the # is on guard.
+GDT>Entry:    912
+dt
+A good stroke, but it's too slow, the # dodges.
+GDT>Entry:    913
+dt
+The haft of your blade knocks out the #.
+GDT>Entry:    914
+dt
+The # drops to his knees, unconscious.
+GDT>Entry:    915
+dt
+The # is knocked out!
+GDT>Entry:    916
+dt
+It's the end for the # as your knife severs his jugular.
+GDT>Entry:    917
+dt
+The fatal thrust strikes the # square in the heart.
+GDT>Entry:    918
+dt
+The # takes a final blow and slumps to the floor dead.
+GDT>Entry:    919
+dt
+The # is slashed on the arm, blood begins to trickle down.
+GDT>Entry:    920
+dt
+Your knife point pinks the # on the wrist, but it's not serious.
+GDT>Entry:    921
+dt
+Your stroke lands, but it was only the flat of the blade.
+GDT>Entry:    922
+dt
+The blow lands, making a shallow gash in the #'s arm.
+GDT>Entry:    923
+dt
+The # receives a deep gash in his side.
+GDT>Entry:    924
+dt
+A savage cut on the leg stuns the #, but he can still fight.
+GDT>Entry:    925
+dt
+Slash!  Your stroke connects!  The # could be in serious trouble!
+GDT>Entry:    926
+dt
+The # drops to his knees, staggered.
+GDT>Entry:    927
+dt
+The # is confused and can't fight back.
+GDT>Entry:    928
+dt
+The quickness of your thrust knocks the # back, staggered.
+GDT>Entry:    929
+dt
+The # is disarmed by a subtle feint past his guard.
+GDT>Entry:    930
+dt
+The cyclops misses, but the backwash almost knocks you over.
+GDT>Entry:    931
+dt
+The cyclops rushes you but runs into the wall.
+GDT>Entry:    932
+dt
+The cyclops trips over his feet trying to get at you.
+GDT>Entry:    933
+dt
+The cyclops unleashes a roundhouse punch, but you have time to dodge.
+GDT>Entry:    934
+dt
+The cyclops knocks you unconscious.
+GDT>Entry:    935
+dt
+The cyclops sends you crashing to the floor, unconscious.
+GDT>Entry:    936
+dt
+The cyclops raises his arms and crushes your skull.
+GDT>Entry:    937
+dt
+The cyclops has just essentially ripped you to shreds.
+GDT>Entry:    938
+dt
+The cyclops decks you.  In fact, you are dead.
+GDT>Entry:    939
+dt
+The cyclops breaks your neck with a massive smash.
+GDT>Entry:    940
+dt
+A quick punch, but it was only a glancing blow.
+GDT>Entry:    941
+dt
+The cyclops grabs but you twist free, leaving part of your cloak.
+GDT>Entry:    942
+dt
+A glancing blow from the cyclops' fist.
+GDT>Entry:    943
+dt
+The cyclops chops at you with the side of his hand and connects, but
+not solidly.
+GDT>Entry:    944
+dt
+The cyclops gets a good grip and breaks your arm.
+GDT>Entry:    945
+dt
+The cyclops knocks the wind out of you with a quick punch.
+GDT>Entry:    946
+dt
+The cyclops smashes his huge fist into your chest, breaking several ribs.
+GDT>Entry:    947
+dt
+A flying drop kick breaks your jaw.
+GDT>Entry:    948
+dt
+The cyclops breaks your leg with a staggering blow.
+GDT>Entry:    949
+dt
+The cyclops knocks you silly, and you reel back.
+GDT>Entry:    950
+dt
+The cyclops grabs you and almost strangles you before you wiggle free,
+breathless.
+GDT>Entry:    951
+dt
+Heedless of your weapons, the cyclops tosses you against the rock
+wall of the room.
+GDT>Entry:    952
+dt
+The cyclops lands a punch that knocks the wind out of you.
+GDT>Entry:    953
+dt
+The cyclops grabs you by the arm, and you drop your #.
+GDT>Entry:    954
+dt
+The cyclops kicks your # out of your hand.
+GDT>Entry:    955
+dt
+The monster grabs you on the wrist, squeezes, and you drop
+your # in pain.
+GDT>Entry:    956
+dt
+The cyclops grabs your #, tastes it, and throws it to the
+ground in disgust.
+GDT>Entry:    957
+dt
+The cyclops is so excited by his success that he neglects to kill you.
+GDT>Entry:    958
+dt
+The cyclops, momentarily overcome by remorse, holds back.
+GDT>Entry:    959
+dt
+The cyclops seems unable to decide whether to broil or stew his dinner.
+GDT>Entry:    960
+dt
+The cyclops, no sportsman, dispatches his unconscious victim.
+GDT>Entry:    961
+dt
+The troll swings his axe, but it misses.
+GDT>Entry:    962
+dt
+The troll's axe barely misses your ear.
+GDT>Entry:    963
+dt
+The axe sweeps past you as you jump aside.
+GDT>Entry:    964
+dt
+The axe crashes against the rock, throwing sparks.
+GDT>Entry:    965
+dt
+The flat of the troll's axe hits you delicately on the head, knocking
+you out.
+GDT>Entry:    966
+dt
+The troll lands a killing blow.  You are dead.
+GDT>Entry:    967
+dt
+The troll neatly removes your head.
+GDT>Entry:    968
+dt
+The troll's axe cleaves you from the nave to the chops.
+GDT>Entry:    969
+dt
+The troll's axe bashes in your skull.
+GDT>Entry:    970
+dt
+The axe gets you right in the side.  Ouch!
+GDT>Entry:    971
+dt
+The flat of the troll's axe skins across your forearm.
+GDT>Entry:    972
+dt
+The troll's swing almost knocks you over as you barely parry in time.
+GDT>Entry:    973
+dt
+The troll swings his axe, and it nicks your arm as you dodge.
+GDT>Entry:    974
+dt
+The troll charges, and his axe slashes you on your # arm.
+GDT>Entry:    975
+dt
+The troll's axe swings down, gashing your shoulder.
+GDT>Entry:    976
+dt
+An axe stroke makes a deep wound in your leg.
+GDT>Entry:    977
+dt
+The troll sees a hole in your defense, and a lightning stroke opens a
+deep wound in your left side.
+GDT>Entry:    978
+dt
+The troll hits you with a glancing blow, and you are momentarily stunned.
+GDT>Entry:    979
+dt
+The troll swings.  The blade turns on your armor but crashes broadside
+into your head.
+GDT>Entry:    980
+dt
+You stagger back under a hail of strokes.
+GDT>Entry:    981
+dt
+The troll's mighty blow drops you to your knees.
+GDT>Entry:    982
+dt
+The axe hits your # and sends it spinning.
+GDT>Entry:    983
+dt
+The troll swings.  You parry, but the force of his blow disarms you.
+GDT>Entry:    984
+dt
+The axe knocks your # out of your hand.  It falls to the floor.
+GDT>Entry:    985
+dt
+You parry the blow, but your # is knocked from your hand.
+GDT>Entry:    986
+dt
+The troll strikes at your unconscious form but misses in his rage.
+GDT>Entry:    987
+dt
+The troll hesitates, fingering his axe.
+GDT>Entry:    988
+dt
+The troll scratches his head ruminatively.  Might you be magically
+protected, he wonders?
+GDT>Entry:    989
+dt
+The troll seems afraid to approach your crumpled form.
+GDT>Entry:    990
+dt
+Conquering his fears, the troll puts you to death.
+GDT>Entry:    991
+dt
+The thief stabs nonchalantly with his stilletto and misses.
+GDT>Entry:    992
+dt
+You dodge as the thief comes in low.
+GDT>Entry:    993
+dt
+You parry a lightning thrust, and the thief salutes you with a
+grim nod.
+GDT>Entry:    994
+dt
+The thief tries to sneak past your guard, but you twist away.
+GDT>Entry:    995
+dt
+Shifting in the midst of a thrust, the thief knocks you unconscious
+with the haft of his stilletto.
+GDT>Entry:    996
+dt
+The thief knocks you out.
+GDT>Entry:    997
+dt
+Finishing you off, a lightning throw right to the heart.
+GDT>Entry:    998
+dt
+The stilletto severs your jugular.  It looks like the end.
+GDT>Entry:    spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+Welcome to Dungeon.			This version created 11-MAR-78.
+You are in an open field west of a big white house with a boarded
+front door.
+There is a small wrapped mailbox here.
+>gdt
+GDT>dt
+Entry:    1001
+dt
+A quick thrust pinks your left arm, and blood starts to trickle
+down.
+GDT>Entry:    1002
+dt
+Raking his stilletto across your arm, the thief draws blood.
+GDT>Entry:    1003
+dt
+The stilletto flashes faster than you can follow, and blood
+wells from your leg.
+GDT>Entry:    1004
+dt
+The thief slowly approaches, strikes like a snake, and leaves you
+wounded.
+GDT>Entry:    1005
+dt
+The thief strikes like a snake!  The resulting wound is serious.
+GDT>Entry:    1006
+dt
+The thief stabs a deep cut in your upper arm.
+GDT>Entry:    1007
+dt
+The stilletto touches your forehead, and the welling blood obscures
+your vision.
+GDT>Entry:    1008
+dt
+The thief strikes at your wrist, and suddenly your grip is slippery
+with blood.
+GDT>Entry:    1009
+dt
+The butt of his stilletto cracks you on the skull, and you stagger back.
+GDT>Entry:    1010
+dt
+You are forced back and trip over your own feet, falling heavily to
+the floor.
+GDT>Entry:    1011
+dt
+The thief rams the haft of his blade into your stomach, leaving you
+out of breath.
+GDT>Entry:    1012
+dt
+The thief attacks, and you fall back desperately.
+GDT>Entry:    1013
+dt
+A long theatrical slash.  You parry it desperately, but the thief
+twists his knife, and your # goes flying.
+GDT>Entry:    1014
+dt
+The thief neatly flips your # out of your hands, and it drops to the
+floor.
+GDT>Entry:    1015
+dt
+You parry a low thrust, and your # slips out of your hand.
+GDT>Entry:    1016
+dt
+Avoiding the thief's stilletto, you stumble to the floor, dropping
+your #.
+GDT>Entry:    1017
+dt
+The thief, a man of good breeding, refrains from attacking a helpless
+opponent.
+GDT>Entry:    1018
+dt
+The thief amuses himself by searching your pockets.
+GDT>Entry:    1019
+dt
+The thief entertains himself by rifling your pack.
+GDT>Entry:    1020
+dt
+The thief, noticing you beginning to stir, reluctantly finishes you off.
+GDT>Entry:    1021
+dt
+The thief, forgetting his essentially genteel upbringing, cuts your
+throat.
+GDT>Entry:    1022
+dt
+The thief, who is essentially a pragmatist, dispatches you as a threat
+to his livelihood.
+GDT>Entry:    1023
+dt
+The elf, willing to bargain, says "What's in it for me?"
+GDT>Entry:    1024
+dt
+The elf, satisified with the trade says - 
+send email to "peppermint@northpolewonderland.com" for that which you seek.
+GDT>Entry:    1025
+dt
+"That wasn't quite what I had in mind", he says, tossing
+the # into the fire, where it vanishes.
+GDT>Entry:    1026
+dt
+The elf appears increasingly impatient.
+GDT>Entry:    1027
+dt
+The elf says - you have conquered this challenge - the game will now end.
+GDT>Entry:    1028
+dt
+GDT>Entry:    1029
+dt
+GDT>Entry:    1030
+dt
+GDT>Entry:    1031
+dt
+GDT>Entry:    1032
+dt
+GDT>Entry:    1033
+dt
+GDT>Entry:    1034
+dt
+GDT>Entry:    1035
+dt
+GDT>Entry:    1036
+dt
+GDT>Entry:    1037
+dt
+GDT>Entry:    1038
+dt
+GDT>Entry:    1039
+dt
+GDT>Entry:    1040
+dt
+GDT>Entry:    1041
+dt
+GDT>Entry:    1042
+dt
+GDT>Entry:    1043
+dt
+GDT>Entry:    1044
+dt
+GDT>Entry:    1045
+dt
+GDT>Entry:    1046
+dt
+GDT>Entry:    1047
+dt
+GDT>Entry:    1048
+dt
+GDT>Entry:    1049
+dt
+GDT>Entry:    1050
+dt
+GDT>Entry:    1051
+dt
+ 9() ¨.*/="%1¬(#	µ ·<á÷ÌÓ}ñÂÆ/#ó¦{çØíÁèðÃÑíqéXâïáÛõÀúuØÐñåÖÍÑhÛÏÚ×Ìl¸ýÏÐÞÁûÉÍIØ
+GDT>Entry:    1052
+dt
+»å<,®S|k¶m«z[½¥µ½£´´ô¢ó²þĈ­
+GDT>Entry:    1053
+dt
+GDT>Entry:    1054
+dt
+GDT>Entry:    1055
+dt
+GDT>Entry:    1056
+dt
+GDT>Entry:    1057
+dt
+GDT>Entry:    1058
+dt
+GDT>Entry:    1059
+dt
+GDT>Entry:    1060
+dt
+GDT>Entry:    1061
+dt
+GDT>Entry:    1062
+dt
+GDT>Entry:    1063
+dt
+GDT>Entry:    1064
+dt
+GDT>Entry:    1065
+dt
+GDT>Entry:    1066
+dt
+GDT>Entry:    1067
+dt
+GDT>Entry:    1068
+dt
+GDT>Entry:    1069
+dt
+GDT>Entry:    1070
+dt
+GDT>Entry:    1071
+dt
+GDT>Entry:    1072
+dt
+GDT>Entry:    1073
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1074
+dt
+GDT>Entry:    1075
+dt
+GDT>Entry:    1076
+dt
+GDT>Entry:    1077
+dt
+GDT>Entry:    1078
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1079
+dt
+GDT>Entry:    1080
+dt
+GDT>Entry:    1081
+dt
+GDT>Entry:    1082
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1083
+dt
+GDT>Entry:    1084
+dt
+GDT>Entry:    1085
+dt
+GDT>Entry:    1086
+dt
+GDT>Entry:    1087
+dt
+GDT>Entry:    1088
+dt
+GDT>Entry:    1089
+dt
+GDT>Entry:    1090
+dt
+GDT>Entry:    1091
+dt
+GDT>Entry:    1092
+dt
+GDT>Entry:    1093
+dt
+GDT>Entry:    1094
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1095
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1096
+dt
+GDT>Entry:    1097
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1098
+dt
+GDT>Entry:    1099
+dt
+GDT>Entry:    1100
+dt
+GDT>Entry:    1101
+dt
+GDT>Entry:    1102
+dt
+GDT>Entry:    1103
+dt
+GDT>Entry:    1104
+dt
+GDT>Entry:    1105
+dt
+GDT>Entry:    1106
+dt
+GDT>Entry:    1107
+dt
+GDT>Entry:    1108
+dt
+GDT>Entry:    1109
+dt
+GDT>Entry:    1110
+dt
+VOyZiLNtsNVh_2_-f/IY~cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1111
+dt
+GDT>Entry:    1112
+dt
+ÛèûçêÿÎýÒððßøûûòÃøó÷âïÆíúÀØïÐËÓÂëÈËÇÂßåÜøÑÝþÔÚÔÓíØÃÖÓÏõ͈¡¬¦«¶¢¡¨X\¿½°¼±»°²¸ ·±¯­s¯Dk¦¹¿d稛|hlwKz¶ۑҙșý ê¸"¥#+@°g}l¯¶·¾¾¨ø¸çèû§ۮƮʗȸ.¨#òe×2ÞÞ?ç%È/Ø=þ×ãÑÆÀϟϑö¢٥ɫîZÓaöyÿDÿ$ÆéùÝóÀÜåþì²ì¶՗úvê\Í30ÌØìá$<!? $4(>,,^i4M=]=SB+D;¡¤¤$-³-±;+ð÷qºT]ª]¥kTDHTdsnnuK!BB{TD#c+^ò{ÈrÐr¸J{efuFRTOWjzcXcRZ#u9e'B/¿üۓçêªë	²¯:%º33\¢Dcºs³G°¾°¦´¶¯¶¸© º ¶¦ìÉü[ÙyÐZÐJétÆpÖñìÉÀ À$ù(Ö>Æ-àÑÝõøÞñàñÜÈÐçÔ÷ÏÐÖÍÓèááؙ÷mç{Àb=¯¹¨(«ÔÔ0ß-êÔ?
+GDT>Entry:    1113
+dt
+S·|ºl¥K¥V¦sz´z¾C±l´|[¦tAae³jª·´¢§«¶º¸¢ ««½­àê²Ȼï»áè­ú½çîç˾˲ò¥ݭͿêA÷GÒlÛUÛTâ[ÍVÝ{úfÇ@âë%ë$Ò)ýíÊÔæñÍøôøøÁþîõþÓÙÙ$+(\1PRO)[4SBag!izg9kC!o(°(·¸>¬.¸	¹°1£88.>ódA¹HHq^Ni t§QX°X´a¹OL_ZxJE\`viEiOP4*oHUpÆyñyñ@ÀoÇÃXť^sRW°EBc¨iµ{W~p§¿³§®­®¡¸¨ä·Ͼñ¾öǨxޟÇâ¦ǏÎPÎT÷XØIÈUïZòT×}ÞdÞdçmÈdØÿ`ÂJçiîOîC×3ø5è3Ï9Ò÷3þþÇééùüÞý#$6$T	W.f3«¨&¨	¼¬>Òø&Â/ç/êî9Ø)ÄÊÂ6ò?Ó<,:*:p|`E/L7L5u:Z(J3m4p6U\Æ\ÎeÏJÅZô}à@¿el½l³L¿z«j»M¼PtF}S} D6k>{\ø¡	,00´Kye¬i±~^«³·«©¢¢ÿò´ñ¤ìñø»޲²դݴ˓Ìî[Ë{ÂEÂIû@ÔBÄxãÿËÚéÓÝÓÒêãÅÕò2Ïé×àáàÄÙÍöÄæÝÁÝܯùð§ð¨ɽæöoÑE,Þ	â
+GDT>Entry:    1114
+dt
+GDT>Entry:    1115
+dt
+GDT>Entry:    1116
+dt
+GDT>Entry:    1117
+dt
+GDT>Entry:    1118
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1119
+dt
+cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1120
+dt
+GDT>Entry:    1121
+dt
+GDT>Entry:    1122
+dt
+'xh?s"ybM]7_U·/½RÃwÐ~ü~íGìhx_B«gn³n°VOyZiLNtsNVh_2_-f/IY~cFÄOêO÷vÅYÙIÎn±Welcome to Dungeon.			This version created 11-MAR-78.
+GDT>Entry:    1123
+dt
+GDT>Entry:    1124
+dt
+GDT>Entry:    1125
+dt
+GDT>Entry:    1126
+dt
+GDT>Entry:    1127
+dt
+GDT>Entry:    1128
+dt
+GDT>Entry:    1129
+dt
+GDT>Entry:    1130
+dt
+GDT>Entry:    1131
+dt
+GDT>Entry:    1132
+dt
+GDT>Entry:    1133
+dt
+GDT>Entry:    1134
+dt
+GDT>Entry:    1135
+dt
+GDT>Entry:    1136
+dt
+GDT>Entry:    1137
+dt
+GDT>Entry:    1138
+dt
+GDT>Entry:    1139
+dt
+GDT>Entry:    1140
+dt
+GDT>Entry:    1141
+dt
+GDT>Entry:    1142
+dt
+GDT>Entry:    1143
+dt
+GDT>Entry:    1144
+dt
+GDT>Entry:    1145
+dt
+GDT>Entry:    1146
+dt
+GDT>Entry:    1147
+dt
+GDT>Entry:    1148
+dt
+GDT>Entry:    1149
+dt
+GDT>Entry:    1150
+dt
+GDT>Entry:    1151
+dt
+GDT>Entry:    1152
+dt
+GDT>Entry:    1153
+dt
+GDT>Entry:    1154
+dt
+GDT>Entry:    1155
+dt
+GDT>Entry:    1156
+dt
+GDT>Entry:    1157
+dt
+GDT>Entry:    1158
+dt
+GDT>Entry:    1159
+dt
+GDT>Entry:    1160
+dt
+GDT>Entry:    1161
+dt
+GDT>Entry:    1162
+dt
+GDT>Entry:    1163
+dt
+GDT>Entry:    1164
+dt
+GDT>Entry:    1165
+dt
+GDT>Entry:    1166
+dt
+GDT>Entry:    1167
+dt
+GDT>Entry:    1168
+dt
+GDT>Entry:    1169
+dt
+GDT>Entry:    1170
+dt
+GDT>Entry:    1171
+dt
+GDT>Entry:    1172
+dt
+GDT>Entry:    1173
+dt
+GDT>Entry:    1174
+dt
+GDT>Entry:    1175
+dt
+GDT>Entry:    1176
+dt
+GDT>Entry:    1177
+dt
+GDT>Entry:    1178
+dt
+GDT>Entry:    1179
+dt
+GDT>Entry:    1180
+dt
+GDT>Entry:    1181
+dt
+GDT>Entry:    1182
+dt
+GDT>Entry:    1183
+dt
+GDT>Entry:    1184
+dt
+GDT>Entry:    1185
+dt
+GDT>Entry:    1186
+dt
+GDT>Entry:    1187
+dt
+GDT>Entry:    1188
+dt
+GDT>Entry:    1189
+dt
+GDT>Entry:    1190
+dt
+GDT>Entry:    1191
+dt
+GDT>Entry:    1192
+dt
+GDT>Entry:    1193
+dt
+GDT>Entry:    1194
+dt
+GDT>Entry:    1195
+dt
+GDT>Entry:    1196
+dt
+GDT>Entry:    1197
+dt
+GDT>Entry:    1198
+dt
+GDT>Entry:    1199
+dt
+GDT>Entry:    1200
+dt
+GDT>Entry:    1201
+dt
+GDT>Entry:    1202
+dt
+GDT>Entry:    1203
+dt
+GDT>Entry:    1204
+dt
+GDT>Entry:    1205
+dt
+GDT>Entry:    1206
+dt
+GDT>Entry:    1207
+dt
+GDT>Entry:    1208
+dt
+GDT>Entry:    1209
+dt
+GDT>Entry:    1210
+dt
+GDT>Entry:    1211
+dt
+GDT>Entry:    1212
+dt
+GDT>Entry:    1213
+dt
+GDT>Entry:    1214
+dt
+GDT>Entry:    1215
+dt
+GDT>Entry:    1216
+dt
+GDT>Entry:    1217
+dt
+GDT>Entry:    1218
+dt
+GDT>Entry:    1219
+dt
+GDT>Entry:    1220
+dt
+GDT>Entry:    1221
+dt
+GDT>Entry:    1222
+dt
+GDT>Entry:    1223
+dt
+GDT>Entry:    1224
+dt
+GDT>Entry:    1225
+dt
+GDT>Entry:    1226
+dt
+GDT>Entry:    1227
+dt
+GDT>Entry:    1228
+dt
+GDT>Entry:    1229
+dt
+GDT>Entry:    1230
+dt
+GDT>Entry:    1231
+dt
+GDT>Entry:    1232
+dt
+GDT>Entry:    1233
+dt
+GDT>Entry:    1234
+dt
+GDT>Entry:    1235
+dt
+GDT>Entry:    1236
+dt
+GDT>Entry:    1237
+dt
+GDT>Entry:    1238
+dt
+GDT>Entry:    1239
+dt
+GDT>Entry:    1240
+dt
+GDT>Entry:    1241
+dt
+GDT>Entry:    1242
+dt
+GDT>Entry:    1243
+dt
+GDT>Entry:    1244
+dt
+GDT>Entry:    1245
+dt
+GDT>Entry:    1246
+dt
+GDT>Entry:    1247
+dt
+GDT>Entry:    1248
+dt
+GDT>Entry:    1249
+dt
+GDT>Entry:    1250
+dt
+GDT>Entry:    1251
+dt
+GDT>Entry:    1252
+dt
+GDT>Entry:    1253
+dt
+GDT>Entry:    1254
+dt
+GDT>Entry:    1255
+dt
+GDT>Entry:    1256
+dt
+GDT>Entry:    1257
+dt
+GDT>Entry:    1258
+dt
+GDT>Entry:    1259
+dt
+GDT>Entry:    1260
+dt
+GDT>Entry:    1261
+dt
+GDT>Entry:    1262
+dt
+GDT>Entry:    1263
+dt
+GDT>Entry:    1264
+dt
+GDT>Entry:    1265
+dt
+GDT>Entry:    1266
+dt
+GDT>Entry:    1267
+dt
+GDT>Entry:    1268
+dt
+GDT>Entry:    1269
+dt
+GDT>Entry:    1270
+dt
+GDT>Entry:    1271
+dt
+GDT>Entry:    1272
+dt
+GDT>Entry:    1273
+dt
+GDT>Entry:    1274
+dt
+GDT>Entry:    1275
+dt
+GDT>Entry:    1276
+dt
+GDT>Entry:    1277
+dt
+GDT>Entry:    1278
+dt
+GDT>Entry:    1279
+dt
+GDT>Entry:    1280
+dt
+GDT>Entry:    1281
+dt
+GDT>Entry:    1282
+dt
+GDT>Entry:    1283
+dt
+GDT>Entry:    1284
+dt
+GDT>Entry:    1285
+dt
+GDT>Entry:    1286
+dt
+GDT>Entry:    1287
+dt
+GDT>Entry:    1288
+dt
+GDT>Entry:    1289
+dt
+GDT>Entry:    1290
+dt
+GDT>Entry:    1291
+dt
+GDT>Entry:    1292
+dt
+GDT>Entry:    1293
+dt
+GDT>Entry:    1294
+dt
+GDT>Entry:    1295
+dt

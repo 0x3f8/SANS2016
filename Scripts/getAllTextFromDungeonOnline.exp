@@ -1,0 +1,14 @@
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+expect ">"
+
+send "gdt\n"
+expect "GDT>"
+
+set count 1500
+
+for {set i 1} {$i < $count} {incr i 1} {
+send "dt\n"
+expect "Entry:"
+send "$i\r"
+
+}
