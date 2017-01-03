@@ -23,7 +23,7 @@ This experimental expect script will connect to the dungeon server and retrieve 
 
 Current Issues:
 
- Dropping the Axe causes the troll to appear and murder you.  Using NT doesn't fix this
+- Dropping the Axe causes the troll to appear and murder you.  Using NT doesn't fix this
 - Dropping the skeleton causes its ghose to appear, but the script keeps going
 - Several other items cause issues
 - At some point items don't get dropped and then inventory begins to stack, making it difficult to verify item index number
