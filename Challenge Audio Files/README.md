@@ -1,7 +1,6 @@
 These are the audio files recovered from the 7 challenges presented during the Holiday Hack Event.  Additionally, they have all been combined and recombobulated for your listening pleasure.
-
-|---------------------------|
-| Source         | File |
+| Source         | File         |
+|----------------|--------------|
 | SantaGram APK | discombobulatedaudio1.mp3 |
 | Mobile Analytics Credential | discombobulatedaudio2.mp3 |
 | Dungeon Server (via email) | discombobulatedaudio3.mp3 |
