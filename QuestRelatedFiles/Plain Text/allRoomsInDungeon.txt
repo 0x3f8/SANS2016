@@ -1,0 +1,2220 @@
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+Welcome to Dungeon.			This version created 11-MAR-78.
+You are in an open field west of a big white house with a boarded
+front door.
+There is a small wrapped mailbox here.
+>gdt
+GDT>nd
+No deaths.
+GDT>tk
+Entry:    15
+Taken.
+GDT>ex
+>Turn on lamp
+The lamp is now on.
+>gdt
+GDT>ah
+Old=      2      New= 1
+GDT>EX
+>look
+You are in a narrow east-west passageway.  There is a narrow staircase
+leading down at the north end of the room.
+>gdt
+GDT>ah
+Old=      1      New= 2
+GDT>EX
+>look
+You are in an open field west of a big white house with a boarded
+front door.
+There is a small wrapped mailbox here.
+>gdt
+GDT>ah
+Old=      2      New= 3
+GDT>EX
+>look
+You are facing the north side of a white house.  There is no door here,
+and all the windows are barred.
+>gdt
+GDT>ah
+Old=      3      New= 4
+GDT>EX
+>look
+You are facing the south side of a white house.  There is no door here,
+and all the windows are barred.
+>gdt
+GDT>ah
+Old=      4      New= 5
+GDT>EX
+>look
+You are behind the white house.  In one corner of the house
+there is a window which is slightly ajar.
+>gdt
+GDT>ah
+Old=      5      New= 6
+GDT>EX
+>look
+You are in the kitchen of the white house.  A table seems to have
+been used recently for the preparation of food.  A passage leads to
+the west, and a dark staircase can be seen leading upward.  To the
+east is a small window which is slightly ajar.
+On the table is an elongated brown sack, smelling of hot peppers.
+A clear glass bottle is here.
+The glass bottle contains:
+  A quantity of water.
+>gdt
+GDT>ah
+Old=      6      New= 7
+GDT>EX
+>look
+You are in the attic.  The only exit is stairs that lead down.
+A large coil of rope is lying in the corner.
+On a table is a nasty-looking knife.
+There is a square brick here which feels like clay.
+>gdt
+GDT>ah
+Old=      7      New= 8
+GDT>EX
+>look
+You are in the living room.  There is a door to the east.  To the west
+is a wooden door with strange gothic lettering, which appears to be
+nailed shut.
+In the center of the room is a large oriental rug.
+There is a trophy case here.
+On hooks above the mantlepiece hangs an elvish sword of great antiquity.
+There is an issue of US NEWS & DUNGEON REPORT dated 11-MAR-78 here.
+>gdt
+GDT>ah
+Old=      8      New= 9
+GDT>EX
+>look
+You are in a dark and damp cellar with a narrow passageway leading
+east, and a crawlway to the south.  To the west is the bottom of a
+steep metal ramp which is unclimbable.
+>gdt
+GDT>ah
+Old=      9      New= 10
+GDT>EX
+>look
+You are in a small room with passages off in all directions.
+Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
+A nasty-looking troll, brandishing a bloody axe, blocks all passages
+out of the room.
+The axe crashes against the rock, throwing sparks.
+>gdt
+GDT>ah
+Old=     10      New= 11
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     11      New= 12
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     12      New= 13
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     13      New= 14
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     14      New= 15
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     15      New= 16
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+Beside the skeleton is a rusty knife.
+The deceased adventurer's useless lantern is here.
+There is a set of skeleton keys here.
+A skeleton, probably the remains of a luckless adventurer, lies here.
+An old leather bag, bulging with coins, is here.
+>gdt
+GDT>ah
+Old=     16      New= 17
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     17      New= 18
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     18      New= 19
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     19      New= 20
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     20      New= 21
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     21      New= 22
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     22      New= 23
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     23      New= 24
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     24      New= 25
+GDT>EX
+>look
+You are in a small room near the maze.  There are twisty
+passages in the immediate vicinity.
+Above you is a grating locked with a skull-and-crossbones lock.
+>gdt
+GDT>ah
+Old=     25      New= 26
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     26      New= 27
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     27      New= 28
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     28      New= 29
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     29      New= 30
+GDT>EX
+>look
+You are in a maze of twisty little passages, all alike.
+>gdt
+GDT>ah
+Old=     30      New= 31
+GDT>EX
+>look
+You are in a forest, with trees in all directions around you.
+>gdt
+GDT>ah
+Old=     31      New= 32
+GDT>EX
+>look
+You are in a dimly lit forest, with large trees all around.  To the
+east, there appears to be sunlight.
+>gdt
+GDT>ah
+Old=     32      New= 33
+GDT>EX
+>look
+You are in a dimly lit forest, with large trees all around.  One
+particularly large tree with some low branches stands here.
+>gdt
+GDT>ah
+Old=     33      New= 34
+GDT>EX
+>look
+You are in a large forest, with trees obstructing all views except
+to the east, where a small clearing may be seen.
+>gdt
+GDT>ah
+Old=     34      New= 35
+GDT>EX
+>look
+You are in a forest, with trees in all directions around you.
+>gdt
+GDT>ah
+Old=     35      New= 36
+GDT>EX
+>look
+You are in a clearing, with a forest surrounding you on the west
+and south.
+There is a pile of leaves on the ground.
+>gdt
+GDT>ah
+Old=     36      New= 37
+GDT>EX
+>look
+You are in a deep ravine at a crossing with an east-west crawlway.
+Some stone steps are at the south of the ravine and a steep staircase
+descends.
+>gdt
+GDT>ah
+Old=     37      New= 38
+GDT>EX
+>look
+You are in a crawlway with a three foot high ceiling.  Your footing
+is very unsure here due to the assortment of rocks undefoot.  Passages
+can be seen in the east, west, and northwest corners of the crawlway.
+>gdt
+GDT>ah
+Old=     38      New= 39
+GDT>EX
+>look
+You are in a long room on the south shore of a large reservoir.
+There is a western exit, a passageway south, and a steep pathway
+climbing up along the edge of a cliff.
+>gdt
+GDT>ah
+Old=     39      New= 40
+GDT>EX
+>look
+You are on the reservoir.  Beaches can be seen north and south.
+Upstream a small stream enters the reservoir through a narrow
+cleft in the rocks.  The dam can be seen downstream.
+>gdt
+GDT>ah
+Old=     40      New= 41
+GDT>EX
+>look
+You are in a large cavernous room, north of a large reservoir.
+There is a tunnel leaving the room to the north.
+There is a small pump here.
+>gdt
+GDT>ah
+Old=     41      New= 42
+GDT>EX
+>look
+You are standing on a path beside a gently flowing stream.  The path
+travels to the north and the east.
+There is a coil of thin shiny wire here.
+>gdt
+GDT>ah
+Old=     42      New= 43
+GDT>EX
+>look
+You are on the gently flowing stream.  The upstream route is too narrow
+to navigate, and the downstream route is invisible due to twisting
+walls.  There is a narrow beach to land on.
+>gdt
+GDT>ah
+Old=     43      New= 44
+GDT>EX
+>look
+You are in a room which looks like an Egyptian tomb.  There is an
+ascending staircase in the room as well as doors east and south.
+There is a solid gold coffin, used for the burial of Ramses II, here.
+>gdt
+GDT>ah
+Old=     44      New= 45
+GDT>EX
+>look
+You are in a large room with giant icicles hanging from the walls
+and ceiling.  There are passages to the north and east.
+A mass of ice fills the western half of the room.
+>gdt
+GDT>ah
+Old=     45      New= 46
+GDT>EX
+>look
+You are in a small chamber behind the remains of the great glacier.
+To the south and west are small passageways.
+On the floor lies a moby ruby.
+>gdt
+GDT>ah
+Old=     46      New= 47
+GDT>EX
+>look
+You are in an ancient room, long buried by the reservoir.  There are
+exits to the southeast and upward.
+On the shore lies Neptune's own crystal trident.
+>gdt
+GDT>ah
+Old=     47      New= 48
+GDT>EX
+>look
+You are on the south edge of a deep canyon.  Passages lead off
+to the east, south, and northwest.  You can hear the sound of
+flowing water below.
+>gdt
+GDT>ah
+Old=     48      New= 49
+GDT>EX
+>look
+You are in a large room with a ceiling which cannot be detected from
+the ground.  There is a narrow passage from east to west and a stone
+stairway leading upward.  The room is extremely noisy.  In fact, it
+is difficult to hear yourself think.
+There is a large platinum bar here.
+spawn /usr/bin/nc dungeon.northpolewonderland.com 11111
+Welcome to Dungeon.			This version created 11-MAR-78.
+You are in an open field west of a big white house with a boarded
+front door.
+There is a small wrapped mailbox here.
+>gdt
+GDT>nd
+No deaths.
+GDT>tk
+Entry:    15
+Taken.
+GDT>ex
+>Turn on lamp
+The lamp is now on.
+>gdt
+GDT>ah
+Old=      2      New= 50
+GDT>EX
+>look
+You are in a large square room with tall ceilings.  There are exits
+on the north, east, and west sides of the room.  On the south wall is
+an enormous mirror which fills the entire wall.
+>gdt
+GDT>ah
+Old=     50      New= 51
+GDT>EX
+>look
+You are in a large square room with tall ceilings.  There are exits
+on the north, east, and west sides of the room.  On the south wall is
+an enormous mirror which fills the entire wall.
+>gdt
+GDT>ah
+Old=     51      New= 52
+GDT>EX
+>look
+You are in a small cave with an entrance to the north and a stairway
+leading down.
+>gdt
+GDT>ah
+Old=     52      New= 53
+GDT>EX
+>look
+You are in a tiny cave with entrances west and north, and a dark,
+forbidding staircase leading down.
+>gdt
+GDT>ah
+Old=     53      New= 54
+GDT>EX
+>look
+You are in a steep and narrow crawlway.  There are two exits nearby to
+the south and southwest.
+>gdt
+GDT>ah
+Old=     54      New= 55
+GDT>EX
+>look
+You are in a narrow crawlway.  The crawlway leads from north to south,
+However, the south passage divides to the south and southwest.
+>gdt
+GDT>ah
+Old=     55      New= 56
+GDT>EX
+>look
+You are in a cold and damp corridor where a long east-west passageway
+intersects with a northward path.
+>gdt
+GDT>ah
+Old=     56      New= 57
+GDT>EX
+>look
+You are in a winding passage.  It seems that there is only an exit
+on the east end, although the whirring from the round room can be
+heard faintly to the north.
+>gdt
+GDT>ah
+Old=     57      New= 58
+GDT>EX
+>look
+You are in a small chamber, which appears to have been part of a
+coal mine.  On the south wall of the chamber the letters "GRANITE
+WALL" are etched in the rock.  To the east is a long passage, and
+there is a steep metal slide twisting downward.  From the appearance
+of the slide, an attempt to climb up it would be impossible.  To the
+north is a small opening.
+>gdt
+GDT>ah
+Old=     58      New= 59
+GDT>EX
+>look
+You are standing at the entrance of what might have been a coal
+mine.  To the northeast and the northwest are entrances to the mine,
+and there is another exit on the south end of the room.
+>gdt
+GDT>ah
+Old=     59      New= 60
+GDT>EX
+>look
+You are in a small room.  Strange squeaky sounds may be hear coming
+from the passage at the west end.  You may also escape to the south.
+>gdt
+GDT>ah
+Old=     60      New= 61
+GDT>EX
+>look
+You are in a large room, in the middle of which is a small shaft
+descending through the floor into darkness below.  To the west and
+the north are exits from this room.  Constructed over the top of the
+shaft is a metal framework to which a heavy iron chain is attached.
+At the end of the chain is a basket.
+>gdt
+GDT>ah
+Old=     61      New= 62
+GDT>EX
+>look
+You are in a narrow tunnel with large wooden beams running across
+the ceiling and around the walls.  A path from the south splits into
+paths running west and northeast.
+>gdt
+GDT>ah
+Old=     62      New= 63
+GDT>EX
+>look
+You are in a small non-descript room.  However, from the direction
+of a small descending staircase a foul odor can be detected.  To the
+east is a narrow path.
+>gdt
+GDT>ah
+Old=     63      New= 64
+GDT>EX
+>look
+You are in a small room which smells strongly of coal gas.
+There is a sapphire-encrusted bracelet here.
+>gdt
+GDT>ah
+Old=     64      New= 65
+GDT>EX
+>look
+You are in a very small room.  In the corner is a rickety wooden
+ladder, leading downward.  It might be safe to descend.  There is
+also a staircase leading upward.
+>gdt
+GDT>ah
+Old=     65      New= 66
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     66      New= 67
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     67      New= 68
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     68      New= 69
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     69      New= 70
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     70      New= 71
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     71      New= 72
+GDT>EX
+>look
+You are in a non-descript part of a coal mine.
+>gdt
+GDT>ah
+Old=     72      New= 73
+GDT>EX
+>look
+You are in a rather wide room.  On one side is the bottom of a
+narrow wooden ladder.  To the northeast and the south are passages
+leaving the room.
+>gdt
+GDT>ah
+Old=     73      New= 74
+GDT>EX
+>look
+Dead end.
+There is a small heap of coal here.
+>gdt
+GDT>ah
+Old=     74      New= 75
+GDT>EX
+>look
+You are in a long and narrow passage, which is cluttered with broken
+timbers.  A wide passage comes from the north and turns at the
+southwest corner of the room into a very narrow passageway.
+There is a pile of wooden timbers here.
+>gdt
+GDT>ah
+Old=     75      New= 76
+GDT>EX
+>look
+You are in a small square room which is at the bottom of a long
+shaft.  To the east is a passageway and to the northeast a very narrow
+passage.  In the shaft can be seen a heavy iron chain.
+>gdt
+GDT>ah
+Old=     76      New= 77
+GDT>EX
+>look
+You are in large room which seems to be air conditioned.  In one
+corner there is a machine (?) which is shaped somewhat like a clothes
+dryer.  On the 'panel' there is a switch which is labelled in an
+obscure dialect of Swahili.  Fortunately, I know this dialect, and the
+label translates to 'START'.  The switch does not appear to be manip-
+ulable by any human hand (unless the fingers are about 1/16 by 1/4
+inch).  On the front of the machine is a large lid, which is closed.
+>gdt
+GDT>ah
+Old=     77      New= 78
+GDT>EX
+>look
+You are in a small room that has only one door, to the east.
+There is an exquisite jade figurine here.
+>gdt
+GDT>ah
+Old=     78      New= 79
+GDT>EX
+>look
+You are at the periphery of a large dome, which forms the ceiling
+of another room below.  Protecting you from a precipitous drop is a
+wooden railing which circles the dome.
+>gdt
+GDT>ah
+Old=     79      New= 80
+GDT>EX
+>look
+You are in a large room with a prominent doorway leading to a down
+staircase.  To the west is a narrow twisting tunnel.  Above you is a
+large dome painted with scenes depicting elvish hacking rites.  Up
+around the edge of the dome (20 feet up) is a wooden railing.  In the
+center of the room there is a white marble pedestal.
+Sitting on the pedestal is a flaming torch, made of ivory.
+>gdt
+GDT>ah
+Old=     80      New= 81
+GDT>EX
+>look
+You are in a north-south crawlway;  a passage also goes to the east.
+There is a hole above, but it provides no opportunities for climbing.
+>gdt
+GDT>ah
+Old=     81      New= 82
+GDT>EX
+>look
+You are on the west edge of a chasm, the bottom of which cannot be
+seen.  The east side is sheer rock, providing no exits.  A narrow
+passage goes west.  The path you are on continues to the north and south.
+>gdt
+GDT>ah
+Old=     82      New= 83
+GDT>EX
+>look
+You are in a circular room with passages off in eight directions.
+Your compass needle spins wildly, and you cannot get your bearings.
+>gdt
+GDT>ah
+Old=     83      New= 84
+GDT>EX
+>look
+You are in a high north-south passage, which forks to the northeast.
+>gdt
+GDT>ah
+Old=     84      New= 85
+GDT>EX
+>look
+A chasm runs southwest to northeast.  You are on the south edge.  The
+path exits to the south and to the east.
+>gdt
+GDT>ah
+Old=     85      New= 86
+GDT>EX
+>look
+You are in a cave.  Passages exit to the south and to the east, but
+the cave narrows to a crack to the west.  The earth is particularly
+damp here.
+>gdt
+GDT>ah
+Old=     86      New= 87
+GDT>EX
+>look
+A chasm, evidently produced by an ancient river, runs through the
+cave here.  Passages lead off in all directions.
+>gdt
+GDT>ah
+Old=     87      New= 88
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     88      New= 89
+GDT>EX
+>look
+Dead end.
+>gdt
+GDT>ah
+Old=     89      New= 90
+GDT>EX
+>look
+You have entered a cave with passages leading north and southeast.
+There are old engravings on the walls here.
+>gdt
+GDT>ah
+Old=     90      New= 91
+GDT>EX
+>look
+This is a room which is bare on all sides.  There is an exit down.
+To the east is a great door made of stone.  Above the door, the
+following words are written:  "No man shall enter this room without
+solving this riddle--
+	What is tall as a house,
+	Round as a cup,
+	And all the king's horses can't draw it up?".
+>gdt
+GDT>ah
+Old=     91      New= 92
+GDT>EX
+>look
+This is a former broom closet.  The exits are to the east and west.
+There is a pearl necklace here with hundreds of large pearls.
+>gdt
+GDT>ah
+Old=     92      New= 93
+GDT>EX
+>look
+You are outside a large gateway, on which is inscribed:
+
+	"Abandon every hope, all ye who enter here."
+
+The gate is open.  Through it you can see a desolation, with a pile of
+mangled corpses in one corner.  Thousands of voices, lamenting some
+hideous fate, can be heard.
+The way through the gate is barred by evil spirits, who jeer at your
+attempts to pass.
+>gdt
+GDT>ah
+Old=     93      New= 94
+GDT>EX
+>look
+You have entered the land of the living dead, a large desolate
+room.  Although it is apparently uninhabited, you can hear the
+sounds of thousands of lost souls weeping and moaning.  In
+the east corner are stacked the remains of dozens of previous
+adventurers who were less fortunate than yourself.  To the east
+is an ornate passage, apparently recently constructed.
+>gdt
+GDT>ah
+Old=     94      New= 95
+GDT>EX
+>look
+You are standing in a small circular room with a pedestal.  A set of
+stairs leads up, and passages leave the the east and west.
+There is an extremely valuable (perhaps original) grail here.
+>gdt
+GDT>ah
+Old=     95      New= 96
+GDT>EX
+>look
+You are in the west end of a large temple.  On the south wall is an
+ancient inscription, probably a prayer in a long-forgotten language.
+The north wall is solid granite.  The entrance at the west end of the
+room is through huge marble pillars.
+Lying in the corner of the room is a small brass bell.
+>gdt
+GDT>ah
+Old=     96      New= 97
+GDT>EX
+>look
+You are in the east end of a large temple.  In front of you is what
+appears to be an altar.
+On the alter is a large black book, open to page 569.
+On the two ends of the altar are burning candles.
+>gdt
+GDT>ah
+Old=     97      New= 98
+GDT>EX
+>look
+You are standing on the top of flood control dam #3, which was
+quite a tourist attraction in times far distant.  There are paths
+to the north, south, east, and down.
+The sluice gates on the dam are closed.  Behind the dam, there can
+be seen a wide lake.  A small stream is formed by the runoff from
+the lake.
+There is a control panel here.  There is a large metal bolt on the
+panel.  Above the bolt is a small green plastic bubble.
+>gdt
+GDT>ah
+Old=     98      New= 99
+GDT>EX
+>look
+This room appears to have been the waiting room for groups touring
+the dam.  There are exits here to the north and east marked
+"PRIVATE", though the doors are open, and an exit to the south.
+A guidebook entitled "FLOOD CONTROL DAM #3" is on the
+reception desk.
+There is a matchbook whose cover says "VISIT BEAUTIFUL FCD #3" here.
+>gdt
+GDT>ah
+Old=     99      New= 100
+GDT>EX
+>look
+You are in what appears to have been the maintenance room for flood
+control dam #3, judging by the assortment of tool chests around the
+room.  Apparently, this room has been ransacked recently, for most of
+the valuable equipment is gone.  On the wall in front of you is a
+panel of buttons, which are labelled in EBCDIC.  However, they are of
+different colors:  blue, yellow, brown, and red.  The doors to this
+room are in the west and south ends.
+There is an object which looks like a tube of toothpaste here.
+There is a wrench here.
+There is a screwdriver here.
+>gdt
+GDT>ah
+Old=    100      New= 101
+GDT>EX
+>look
+You are in a room with an exit on the west side, and a staircase
+leading up.
+A cyclops, who looks prepared to eat horses (much less mere
+adventurers), blocks the staircase.  From his state of health
+and the bloodstains on the wall, you gather that he is not very
+friendly, though he likes people.
+>gdt
+GDT>ah
+Old=    101      New= 102
+GDT>EX
+>look
+You are in a long passage.  To the south is one entrance.  On the
+east there is an old wooden door with a large hole in it (about
+cyclops sized).
+>gdt
+GDT>ah
+Old=    102      New= 103
+GDT>EX
+>look
+This is a large room, whose north wall is solid granite.  A number
+of discarded bags, which crumble at your touch, are scattered about
+on the floor.  There is an exit down and what appears to be a newly
+created passage to the east.
+There is a silver chalice, intricately engraved, here.
+>gdt
+GDT>ah
+Old=    103      New= 104
+GDT>EX
+>look
+You are in what appears to have been an artist's studio.  The walls
+and floors are splattered with paints of 69 different colors.
+Strangely enough, nothing of value is hanging here.  At the north and
+northwest of the room are open doors (also covered with paint).  An
+extremely dark and narrow chimney leads up from a fireplace.  Although
+you might be able to get up the chimney, it seems unlikely that you
+could get back down.
+>gdt
+GDT>ah
+Old=    104      New= 105
+GDT>EX
+>look
+You are in an art gallery.  Most of the paintings which were here
+have been stolen by vandals with exceptional taste.  The vandals
+left through the north, south, or west exits.
+Fortunately, there is still one chance for you to be a vandal, for on
+the far wall is a work of unparalleled beauty.
+>gdt
+GDT>ah
+Old=    105      New= 106
+GDT>EX
+>look
+You are at the base of flood control dam #3, which looms above you
+and to the north.   The Frigid River is flowing by here.  Across the
+river are the white cliffs, which seem to form a giant wall stretching
+from north to south along the east shore of the river as it winds its
+way downstream.
+There is a folded pile of plastic here which has a small valve attached.
+A sharp stick, which appears to have been broken at one end, is here.
+>gdt
+GDT>ah
+Old=    106      New= 107
+GDT>EX
+>look
+You are on the Frigid River in the vicinity of the dam.  The river
+flows quietly here.  There is a landing on the west shore.
+>gdt
+GDT>ah
+Old=    107      New= 108
+GDT>EX
+>look
+The river turns a corner here making it impossible to see the
+dam.  The white cliffs loom on the east bank, and large rocks
+prevent landing on the west.
+>gdt
+GDT>ah
+Old=    108      New= 109
+GDT>EX
+>look
+The river descends here into a valley.  There is a narrow beach on
+the east below the cliffs, and there is some shore on the west which
+may be suitable.  In the distance a faint rumbling can be heard.
+>gdt
+GDT>ah
+Old=    109      New= 110
+GDT>EX
+>look
+You are on a narrow strip of beach which runs along the base of the
+white cliffs.  The only path here is a narrow one, heading south
+along the cliffs.
+>gdt
+GDT>ah
+Old=    110      New= 111
+GDT>EX
+>look
+You are on a rocky, narrow strip of beach beside the cliffs.  A
+narrow path leads north along the shore.
+>gdt
+GDT>ah
+Old=    111      New= 112
+GDT>EX
+>look
+The river is running faster here, and the sound ahead appears to be
+that of rushing water.  On the west shore is a sandy beach.  A small
+area of beach can also be seen below the cliffs.
+There is a red buoy here (probably a warning).
+>gdt
+GDT>ah
+Old=    112      New= 113
+GDT>EX
+>look
+The sound of rushing water is nearly unbearable here.  On the west
+shore is a large landing area.
+>gdt
+GDT>ah
+Old=    113      New= 114
+GDT>EX
+>look
+Oh dear, you seem to have gone over Aragain Falls.  Not a very
+smart thing to do, apparently.
+>gdt
+GDT>ah
+Old=    114      New= 115
+GDT>EX
+>look
+You are on the shore of the river.  The river here seems somewhat
+treacherous.  A path travels from north to south here, the south end
+quickly turning around a sharp corner.
+>gdt
+GDT>ah
+Old=    115      New= 116
+GDT>EX
+>look
+You are on a large sandy beach at the shore of the river, which is
+flowing quickly by.  A path runs beside the river to the south here.
+>gdt
+GDT>ah
+Old=    116      New= 117
+GDT>EX
+>look
+You are on the west shore of the river.  An entrance to a cave is
+to the northwest.  The shore is very rocky here.
+>gdt
+GDT>ah
+Old=    117      New= 118
+GDT>EX
+>look
+You are in a small cave whose exits are on the south and northwest.
+There is a large shovel here.
+There is a hunk of bat guano here.
+>gdt
+GDT>ah
+Old=    118      New= 119
+GDT>EX
+>look
+You are in a barrel.  Congratulations.  Etched into the side of the
+barrel is the word "GERONIMO!".
+>gdt
+GDT>ah
+Old=    119      New= 120
+GDT>EX
+>look
+You are at the top of Aragain Falls, an enormous waterfall with a
+drop of about 450 feet.  The only path here is on the north end.
+There is a man-sized barrel here which you could fit into.
+A beautiful rainbow can be seen over the falls and to the east.
+>gdt
+GDT>ah
+Old=    120      New= 121
+GDT>EX
+>look
+You are on top of a rainbow (I bet you never thought you would walk
+on a rainbow), with a magnificent view of the falls.  The rainbow
+travels east-west here.
+>gdt
+GDT>ah
+Old=    121      New= 122
+GDT>EX
+>look
+You are on a small beach on the continuation of the Frigid River
+past the falls.  The beach is narrow due to the presence of the white
+cliffs.  The river canyon opens here, and sunlight shines in from
+above.  A rainbow crosses over the falls to the west, and a narrow path
+continues to the southeast.
+>gdt
+GDT>ah
+Old=    122      New= 123
+GDT>EX
+>look
+You are beneath the walls of the river canyon, which may be climbable
+here.  There is a small stream here, which is the lesser part of the
+runoff of Aragain Falls.  To the north is a narrow path.
+>gdt
+GDT>ah
+Old=    123      New= 124
+GDT>EX
+>look
+You are on a ledge about halfway up the wall of the river canyon.
+You can see from here that the main flow from Aragain Falls twists
+along a passage which it is impossible to enter.  Below you is the
+canyon bottom.  Above you is more cliff, which still appears
+climbable.
+>gdt
+GDT>ah
+Old=    124      New= 125
+GDT>EX
+>look
+You are at the top of the great canyon on its south wall. From here
+there is a marvelous view of the canyon and parts of the Frigid River
+upstream.  Across the canyon, the walls of the white cliffs still
+appear to loom far above.  Following the canyon upstream (north and
+northwest), Aragain Falls may be seen, complete with rainbow.
+Fortunately, my vision is better than average, and I can discern the
+top of flood control dam #3 far to the distant north.  To the
+west and south can be seen an immense forest, stretching for miles
+around.  It is possible to climb down into the canyon from here.
+>gdt
+GDT>ah
+Old=    125      New= 126
+GDT>EX
+>look
+You are at the bottom of a large dormant volcano.  High above you
+light may be seen entering from the cone of the volcano.  The only
+exit here is to the north.
+There is a very large and extremely heavy wicker basket with a cloth
+bag here.  Inside the basket is a metal receptacle of some kind.
+Attached to the basket on the outside is a piece of wire.
+The basket contains:
+  A receptacle.
+  A cloth bag.
+  A braided wire.
+>gdt
+GDT>ah
+Old=    126      New= 127
+GDT>EX
+>look
+You are about one hundred feet above the bottom of the volcano.  The
+top of the volcano is clearly visible here.
+>gdt
+GDT>ah
+Old=    127      New= 128
+GDT>EX
+>look
+You are about two hundred feet above the volcano floor.  Looming
+above is the rim of the volcano.  There is a small ledge on the
+west side.
+>gdt
+GDT>ah
+Old=    128      New= 129
+GDT>EX
+>look
+You are high above the floor of the volcano.  From here the rim of
+the volcano looks very narrow, and you are quite near it.  To the
+east is what appears to be a viewing ledge, too thin to land on.
+>gdt
+GDT>ah
+Old=    129      New= 130
+GDT>EX
+>look
+You are near the rim of the volcano, which is only about fifteen feet
+across.  To the west, there is a place to land with a wide ledge.
+>gdt
+GDT>ah
+Old=    130      New= 131
+GDT>EX
+>look
+You are on a narrow ledge overlooking the inside of an old dormant
+volcano.  This ledge appears to be about in the middle between the
+floor below and the rim above.  There is an exit here to the south.
+There is a small hook attached to the rock here.
+On the floor is a gold zorkmid coin (a valuable collector's item).
+>gdt
+GDT>ah
+Old=    131      New= 132
+GDT>EX
+>look
+You are on a ledge in the middle of a large volcano.  Below you
+the volcano bottom can be seen and above is the rim of the volcano.
+A couple of ledges can be seen on the other side of the volcano;
+it appears that this ledge is intermediate in elevation between
+those on the other side.  The exit from this room is to the east.
+>gdt
+GDT>ah
+Old=    132      New= 133
+GDT>EX
+>look
+You are on a wide ledge high into the volcano.  The rim of the
+volcano is about 200 feet above, and there is a precipitous drop
+below to the floor.
+There is a small door to the south.
+There is a small hook attached to the rock here.
+>gdt
+GDT>ah
+Old=    133      New= 134
+GDT>EX
+>look
+You are in a room which must have been a large library, probably
+for the royal family.  All of the shelves appear to have been gnawed
+to pieces by unfriendly gnomes.  To the north is an exit.
+There is a blue book here.
+There is a green book here.
+There is a purple book here.
+There is a white book here.
+>gdt
+GDT>ah
+Old=    134      New= 135
+GDT>EX
+>look
+You are in a dusty old room which is virtually featureless, except
+for an exit on the north side.
+Imbedded in the far wall is a rusty old box.  It appears that
+the box is somewhat damaged, since an oblong hole has been
+chipped out of the front of it.
+>gdt
+GDT>ah
+Old=    135      New= 136
+GDT>EX
+>look
+You are in a small room, whose walls are formed by an old lava flow.
+There are exits here to the west and the south.
+>gdt
+GDT>ah
+Old=    136      New= 137
+GDT>EX
+>look
+You are in the Tomb of the Unknown Implementer.  A hollow voice
+says, "That's not a bug, it's a feature!"
+In the north wall of the room is the Crypt of the Implementers.  It
+is made of the finest marble and is apparently large enough for four
+headless corpses.  The crypt is closed.  Above the entrance is the
+cryptic inscription:
+
+		"Feel Free".
+There are four heads here, mounted securely on poles.
+There is a large pile of empty Coke bottles here, evidently produced
+by the implementers during their long struggle to win totally.
+There is a gigantic pile of line-printer output here.  Although the
+paper once contained useful information, almost nothing can be
+distinguished now.
+>gdt
+GDT>ah
+Old=    137      New= 138
+GDT>EX
+>look
+You are in a room with a low ceiling which is circular in shape.
+There are exits to the east and southeast.
+There is a robot here.
+There is a green piece of paper here.
+>gdt
+GDT>ah
+Old=    138      New= 139
+GDT>EX
+>look
+You are in a large room full of assorted heavy machinery.  The room
+smells of burned resistors.  The room is noisy from the whirring
+sounds of the machines.  Along one wall of the room are three buttons
+which are, respectively, round, triangular, and square.  Naturally,
+above the buttons are instructions written in EBCDIC.  A large sign
+above all the buttons says in English:
+
+		    DANGER:  HIGH VOLTAGE
+
+There are exits to the west and the south.
+>gdt
+GDT>ah
+Old=    139      New= 140
+GDT>EX
+>look
+You are in a dingy closet adjacent to the machine room.  On one wall
+is a small sticker which reads:
+
+		Protected by
+		  FROBOZZ
+	     Magic Alarm Company
+	      (Hello, footpad!).
+There is a beautiful crystal sphere here.
+>gdt
+GDT>ah
+Old=    140      New= 141
+GDT>EX
+>look
+You are trapped inside an steel cage.
+>gdt
+GDT>ah
+Old=    141      New= 142
+GDT>EX
+>look
+You are at the top of the well.  Well done.  There are etchings on
+the side of the well.  There is a small crack across the floor at the
+entrance to a room on the east, but it can be crossed easily.
+>gdt
+GDT>ah
+Old=    142      New= 143
+GDT>EX
+>look
+You are in a damp circular room, whose walls are made of brick and
+mortar.  The roof of this room is not visible, but there appear to be
+some etchings on the walls.  There is a passageway to the west.
+There is a wooden bucket here, three feet in diameter and three feet
+high.
+>gdt
+GDT>ah
+Old=    143      New= 144
+GDT>EX
+>look
+You are in a small square room, in the center of which is a large
+oblong table, no doubt set for afternoon tea.  It is clear from the
+objects on the table that the users were indeed mad.  In the eastern
+corner of this room is a small hole no more than four inches high.
+There are passageways leading away to the west and the northwest.
+There is a piece of cake where with the words "EAT ME" on it.
+There is a piece of cake with orange icing here.
+There is a piece of cake with red icing here.
+There is a piece of cake with blue (ecch) icing here.
+>gdt
+GDT>ah
+Old=    144      New= 145
+GDT>EX
+>look
+You are in an enormous room, in the center of which are four wooden
+posts delineating a rectangular area, above which is what appears to
+be a wooden roof.  In fact, all objects in this room appear to be
+abnormally large.  To the east is a passageway.  There is a large
+chasm on the west and the northwest.
+>gdt
+GDT>ah
+Old=    145      New= 146
+GDT>EX
+>look
+You are in a large room, one half of which is depressed.  There is a
+large leak in the ceiling through which brown colored goop is
+falling.  The only exit from this room is to the west.
+A stoppered glass flask with skull-and-crossbones markings is here.
+The flask is filled with some clear liquid.
+The leak has submerged the depressed area in a pool of sewage.
+>gdt
+GDT>ah
+Old=    146      New= 147
+GDT>EX
+>look
+You are about ten feet above the ground nestled among some large
+branches.  The nearest branch above you is beyond your reach.
+On the branch is a small birds nest.
+The birds nest contains:
+  A jewel-encrusted egg.
+>gdt
+GDT>ah
+Old=    147      New= 148
+GDT>EX
+>look
+You are in the large entrance hall of the Bank of Zork, the largest
+banking institution of the Great Underground Empire.  A partial
+account of its history is in "The Lives of the Twelve Flatheads" with
+the chapter on J. Pierpont Flathead.  A more detailed history (albeit
+less objective) may be found in Flathead's outrageous autobiography
+"I'm Rich and You Aren't - So There!".
+Most of the furniture has been ravaged by passing scavengers.  All
+that remains are two signs at the northwest and northeast corners of
+the room, which say
+
+	<-- WEST VIEWING ROOM		EAST VIEWING ROOM -->
+>gdt
+GDT>ah
+Old=    148      New= 149
+GDT>EX
+>look
+You are in a small square room, which was used by a bank officer
+whose job it was to retrieve safety deposit boxes for the customer.
+On the north side of the room is a sign which reads "Viewing Room".
+On the west side of the room, above an open door, is a sign reading
+
+		    BANK PERSONNEL ONLY
+>gdt
+GDT>ah
+Old=    149      New= 150
+GDT>EX
+>look
+You are in a small square room, which was used by a bank officer
+whose job it was to retrieve safety deposit boxes for the customer.
+On the north side of the room is a sign which reads "Viewing Room".
+On the east side of the room, above an open door, is a sign reading
+
+		    BANK PERSONNEL ONLY
+>gdt
+GDT>ah
+Old=    150      New= 151
+GDT>EX
+>look
+You are in a room used by holders of safety deposit boxes to view
+their contents.  On the north side of the room is a sign which says
+
+   REMAIN HERE WHILE THE BANK OFFICER RETRIEVES YOUR DEPOSIT BOX
+    WHEN YOU ARE FINISHED, LEAVE THE BOX, AND EXIT TO THE SOUTH
+     AN ADVANCED PROTECTIVE DEVICE PREVENTS ALL CUSTOMERS FROM
+      REMOVING ANY SAFETY DEPOSIT BOX FROM THIS VIEWING AREA!
+               Thank you for banking at the Zork!
+>gdt
+GDT>ah
+Old=    151      New= 152
+GDT>EX
+>look
+You are in a room used by holders of safety deposit boxes to view
+their contents.  On the north side of the room is a sign which says
+
+   REMAIN HERE WHILE THE BANK OFFICER RETRIEVES YOUR DEPOSIT BOX
+    WHEN YOU ARE FINISHED, LEAVE THE BOX, AND EXIT TO THE SOUTH
+     AN ADVANCED PROTECTIVE DEVICE PREVENTS ALL CUSTOMERS FROM
+      REMOVING ANY SAFETY DEPOSIT BOX FROM THIS VIEWING AREA!
+               Thank you for banking at the Zork!
+>gdt
+GDT>ah
+Old=    152      New= 153
+GDT>EX
+>look
+You are in a small bare room with no distinguishing features.  There
+are no exits from this room.
+>gdt
+GDT>ah
+Old=    153      New= 154
+GDT>EX
+>look
+You are in the Vault of the Bank of Zork, in which there are no doors.
+On the floor sit 200 neatly stacked zorkmid bills.
+>gdt
+GDT>ah
+Old=    154      New= 155
+GDT>EX
+>look
+You are in a large rectangular room.  The east and west walls here
+were used for storing safety deposit boxes.  As might be expected,
+all have been carefully removed by evil persons.  To the east, west,
+and south of the room are large doorways.  The northern "wall"
+of the room is a shimmering curtain of light.  In the center of the
+room is a large stone cube, about 10 feet on a side.  Engraved on
+the side of the cube is some lettering.
+>gdt
+GDT>ah
+Old=    155      New= 156
+GDT>EX
+>look
+This room was the office of the Chairman of the Bank of Zork.
+Like the other rooms here, it has been extensively vandalized.
+The lone exit is to the north.
+A portrait of J. Pierpont Flathead hangs on the wall.
+>gdt
+GDT>ah
+Old=    156      New= 157
+GDT>EX
+>look
+Though large and esthetically pleasing, the crypt is empty;  the
+sarcophagi, bodies, and rich treasures to be expected in a tomb of
+this magnificence are missing.  Inscribed on the wall is the motto of
+the implementers, "Feel Free".  There is a door leading out of the
+crypt to the south.  The door is closed.
+>gdt
+GDT>ah
+Old=    157      New= 158
+GDT>EX
+>look
+You are standing at the top of a flight of stairs that lead down to
+a passage below.  Dim light, as from torches, can be seen in the
+passage.  Behind you the stairs lead into untouched rock.
+>gdt
+GDT>ah
+Old=    158      New= 159
+GDT>EX
+>look
+You are standing near one end of a long dimly lit hall.  To the
+south, stone stairs ascend.  To the north, the corridor is illum-
+inated by torches set high in the wall, out of reach.  On one wall
+is a red button.
+>gdt
+GDT>ah
+Old=    159      New= 160
+GDT>EX
+>look
+You are in a small room, with narrow passages exiting to the north
+and south.  A narrow red beam of light crosses the room at the north
+end, inches above the floor.
+>gdt
+GDT>ah
+Old=    160      New= 161
+GDT>EX
+>look
+You are in part of the long hallway.  The east and west walls are
+dressed stone.  In the center of the hall is a shallow stone channel.
+In the center of the room the channel widens into a large hole around
+which is engraved a compass rose.
+A passage enters from the south.
+A large mirror fills the north side of the hallway.
+>gdt
+GDT>ah
+Old=    161      New= 162
+GDT>EX
+>look
+You are in part of the long hallway.  The east and west walls are
+dressed stone.  In the center of the hall is a shallow stone channel.
+In the center of the room the channel widens into a large hole around
+which is engraved a compass rose.
+The corridor continues north and south.
+>gdt
+GDT>ah
+Old=    162      New= 163
+GDT>EX
+>look
+You are in part of the long hallway.  The east and west walls are
+dressed stone.  In the center of the hall is a shallow stone channel.
+In the center of the room the channel widens into a large hole around
+which is engraved a compass rose.
+Somewhat to the north, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+A large mirror fills the south side of the hallway.
+>gdt
+GDT>ah
+Old=    163      New= 164
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    164      New= 165
+GDT>EX
+>look
+You are in part of the long hallway.  The east and west walls are
+dressed stone.  In the center of the hall is a shallow stone channel.
+In the center of the room the channel widens into a large hole around
+which is engraved a compass rose.
+Somewhat to the south, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+The corridor continues north.
+>gdt
+GDT>ah
+Old=    165      New= 166
+GDT>EX
+>look
+You are in a north-south hallway which ends in a large wooden door.
+The wooden door has a barred panel in it at about head height.  The
+panel is closed, and the door is closed.
+>gdt
+GDT>ah
+Old=    166      New= 167
+GDT>EX
+>look
+You are in a narrow room whose west wall is a large mirror.
+The opposite wall is solid rock.
+To the north is a large hallway.
+>gdt
+GDT>ah
+Old=    167      New= 168
+GDT>EX
+>look
+You are in a narrow room whose east wall is a large mirror.
+The opposite wall is solid rock.
+To the north is a large hallway.
+>gdt
+GDT>ah
+Old=    168      New= 169
+GDT>EX
+>look
+You are in a narrow room whose west wall is a large mirror.
+The opposite wall is solid rock.
+To the north and south are large hallways.
+>gdt
+GDT>ah
+Old=    169      New= 170
+GDT>EX
+>look
+You are in a narrow room whose east wall is a large mirror.
+The opposite wall is solid rock.
+To the north and south are large hallways.
+>gdt
+GDT>ah
+Old=    170      New= 171
+GDT>EX
+>look
+You are in a narrow room whose west wall is a large mirror.
+The opposite wall is solid rock.
+Somewhat to the north, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+>gdt
+GDT>ah
+Old=    171      New= 172
+GDT>EX
+>look
+You are in a narrow room whose east wall is a large mirror.
+The opposite wall is solid rock.
+Somewhat to the north, identical stone statues face each other from
+pedestals on opposite sides of the corridor.  The statues represent
+Guardians of Zork, a military order of ancient lineage.  They are
+portrayed as heavily armored warriors standing at ease, hands clasped
+around formidable bludgeons.
+>gdt
+GDT>ah
+Old=    172      New= 173
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    173      New= 174
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    174      New= 175
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    175      New= 176
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    176      New= 177
+GDT>EX
+>look
+You are inside a rectangular box of wood whose structure is rather
+complicated.  Four sides and the roof are filled in, and the floor
+is open.
+   As you face the side opposite the entrance, two short sides of
+carved and polished wood are to your left and right.  The left panel
+is mahogany, the right pine.  The wall you face is red on its left
+half and black on its right.  On the entrance side, the wall is white
+opposite the red part of the wall it faces, and yellow opposite the
+black section.  The painted walls are at least twice the length of
+the unpainted ones.  The ceiling is painted blue.
+   In the floor is a stone channel about six inches wide and a foot
+deep.  The channel is oriented in a north-south direction.  In the
+exact center of the room the channel widens into a circular
+depression perhaps two feet wide.  Incised in the stone around this
+area is a compass rose.
+   Running from one short wall to the other at about waist height
+is a wooden bar, carefully carved and drilled.  This bar is pierced
+in two places.  The first hole is in the center of the bar (and thus
+in the center of the room).  The second is at the left end of the room
+(as you face opposite the entrance).  Through each hole runs a wooden
+pole.
+   The pole at the left end of the bar is short, extending about a
+foot above the bar, and ends in a hand grip.  The pole has been
+dropped into a hole carved in the stone floor.
+   The long pole at the center of the bar extends from the ceiling
+through the bar to the circular area in the stone channel.  The
+bottom end of this pole has a T-bar a bit less than two feet long
+attached to it.  On the T-bar is carved an arrow.  The arrow and
+T-bar are pointing west.
+>gdt
+GDT>ah
+Old=    177      New= 178
+GDT>EX
+>look
+You are in a narrow north-south corridor.  At the south end is a door
+and at the north end is an east-west corridor.  The door is closed.
+The dungeon master is quietly leaning on his staff here.
+>gdt
+GDT>ah
+Old=    178      New= 179
+GDT>EX
+>look
+You are in an east-west corridor which turns north at its eastern
+and western ends.  The walls of the corridor are marble.  An
+additional passage leads south at the center of the corridor.
+>gdt
+GDT>ah
+Old=    179      New= 180
+GDT>EX
+>look
+You are in a corridor with polished marble walls.  The corridor
+widens into larger areas as it turns east at its northern and
+southern ends.
+>gdt
+GDT>ah
+Old=    180      New= 181
+GDT>EX
+>look
+You are in a corridor with polished marble walls.  The corridor
+widens into larger areas as it turns west at its northern and
+southern ends.
+>gdt
+GDT>ah
+Old=    181      New= 182
+GDT>EX
+>look
+You are in a large east-west corridor which opens out to a northern
+parapet at its center.  You can see flames and smoke as you peer
+towards the parapet.  The corridor turns south at its east and west
+ends, and due south is a massive wooden door.  In the door is a small
+window barred with iron.  The door is closed.
+>gdt
+GDT>ah
+Old=    182      New= 183
+GDT>EX
+>look
+You are standing behind a stone retaining wall which rims a large
+parapet overlooking a fiery pit.  It is difficult to see through the
+smoke and flame which fills the pit, but it seems to be more or less
+bottomless.  It also extends upwards out of sight.  The pit itself
+is of roughly dressed stone and is circular in shape.  It is about
+two hundred feet in diameter.  The flames generate considerable heat,
+so it is rather uncomfortable standing here.
+   There is an object here which looks like a sundial.  On it are
+an indicator arrow and (in the center) a large button.  On the face
+of the dial are numbers "one" through "eight".  The indicator points
+to the number "one".
+>gdt
+GDT>ah
+Old=    183      New= 184
+GDT>EX
+>look
+You are in a featureless prison cell.  You can see only the flames
+and smoke from the pit out of the small window in the closed door
+in front of you.
+>gdt
+GDT>ah
+Old=    184      New= 185
+GDT>EX
+>look
+You are in a featureless prison cell.  Its wooden door is securely
+fastened, and you can see only the flames and smoke of the pit out
+its small window.
+>gdt
+GDT>ah
+Old=    185      New= 186
+GDT>EX
+>look
+You are in a featureless prison cell.  Its wooden door is securely
+fastened, and you can see only the flames and smoke of the pit out
+its small window.  On the other side of the cell is a bronze door
+which seems to be closed.
+>gdt
+GDT>ah
+Old=    186      New= 187
+GDT>EX
+>look
+You are in a room of large size, richly appointed and decorated
+in a style that bespeaks exquisite taste.  To judge from its
+contents, it is the ultimate storehouse of the treasures of Zork.
+   There are chests here containing precious jewels, mountains of
+zorkmids, rare paintings, ancient statuary, and beguiling curios.
+   In one corner of the room is a bookcase boasting such volumes
+as "The History of the Great Underground Empire", "The Lives of
+the Twelve Flatheads", "The Wisdom of the Implementers", and
+other informative and inspiring works.
+   On one wall is a completely annotated map of the Dungeon of
+Zork, showing points of interest and various troves of treasure,
+and indicating the locations of several superior scenic views.
+   On the desk at the far end of the room may be found stock
+certificates representing a controlling interest in FrobozzCo
+International, the multinational conglomerate and parent company
+of the Frobozz Magic Boat Co., etc.
+>gdt
+GDT>ah
+Old=    187      New= 188
+GDT>EX
+>look
+You are in a small square room, in the middle of which is a recently
+created hole through which you can barely discern the floor some ten
+feet below.  It doesn't seem likely you could climb back up.  An 
+extremely dark and narrow chimney leads up from a fireplace.  Although
+you might be able to get up the chimney, it seems unlikely that you
+could get back down. There are exits to the west and south.
+There is a piece of paper on the ground here.
+>gdt
+GDT>ah
+Old=    188      New= 189
+GDT>EX
+>look
+You are in a room with an exit to the north and a steel door to the east.
+>gdt
+GDT>ah
+Old=    189      New= 190
+GDT>EX
+>look
+You are in a small square room bounded to the north and west with
+marble walls and to the east and south with sandstone walls.
+>gdt
+GDT>ah
+Old=    190      New= 191
+GDT>EX
+>look
+You are at the North Pole. There is a blizzard blowing making it hard to 
+hear or see. In the distance you detect the busy sounds of Santa's elves 
+in full production. To the north you discern the outline of a door with a 
+warm glow omitting from under the door.
+>gdt
+GDT>ah
+Old=    191      New= 192
+GDT>EX
+>look
+You have mysteriously reached the North Pole. 
+In the distance you detect the busy sounds of Santa's elves in full 
+production. 
+
+You are in a warm room, lit by both the fireplace but also the glow of 
+centuries old trophies.
+On the wall is a sign: 
+		Songs of the seasons are in many parts 
+		To solve a puzzle is in our hearts
+		Ask not what what the answer be,
+		Without a trinket to satisfy me.
+The elf is facing you keeping his back warmed by the fire.
+>gdt
+GDT>ah
+Old=    192      New= 193
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    193      New= 194
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    194      New= 195
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    195      New= 196
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    196      New= 197
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    197      New= 198
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    198      New= 199
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    199      New= 200
+GDT>EX
+>look
+Nothing happens.
+>gdt
+GDT>ah
+Old=    200      New= 201
+GDT>EX
+>look
+East-West Passage
+You are in a small room near the maze.  There are twisty
+passages in the immediate vicinity.
+Above you is a grating locked with a skull-and-crossbones lock.
+>gdt
+GDT>ah
+Old=    201      New= 202
+GDT>EX
+>look
+West of House
+>gdt
+GDT>ah
+Old=    202      New= 203
+GDT>EX
+>look
+North of House
+>gdt
+GDT>ah
+Old=    203      New= 204
+GDT>EX
+>look
+South of House
+>gdt
+GDT>ah
+Old=    204      New= 205
+GDT>EX
+>look
+Behind House
+>gdt
+GDT>ah
+Old=    205      New= 206
+GDT>EX
+>look
+Kitchen
+You are in a large room with giant icicles hanging from the walls
+and ceiling.  There are passages to the north and east.
+>gdt
+GDT>ah
+Old=    206      New= 207
+GDT>EX
+>look
+Attic
+>gdt
+GDT>ah
+Old=    207      New= 208
+GDT>EX
+>look
+Living Room
+>gdt
+GDT>ah
+Old=    208      New= 209
+GDT>EX
+>look
+Cellar
+You are in a room with an exit on the west side, and a staircase
+leading up.
+A cyclops, who looks prepared to eat horses (much less mere
+adventurers), blocks the staircase.  From his state of health
+and the bloodstains on the wall, you gather that he is not very
+friendly, though he likes people.
+>gdt
+GDT>ah
+Old=    209      New= 210
+GDT>EX
+>look
+Troll Room
+>gdt
+GDT>ah
+Old=    210      New= 211
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    211      New= 212
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    212      New= 213
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    213      New= 214
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    214      New= 215
+GDT>EX
+>look
+Dead End
+>gdt
+GDT>ah
+Old=    215      New= 216
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    216      New= 217
+GDT>EX
+>look
+Dead End
+>gdt
+GDT>ah
+Old=    217      New= 218
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    218      New= 219
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    219      New= 220
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    220      New= 221
+GDT>EX
+>look
+Dead End
+>gdt
+GDT>ah
+Old=    221      New= 222
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    222      New= 223
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    223      New= 224
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    224      New= 225
+GDT>EX
+>look
+Grating room
+>gdt
+GDT>ah
+Old=    225      New= 226
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    226      New= 227
+GDT>EX
+>look
+Dead End
+>gdt
+GDT>ah
+Old=    227      New= 228
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    228      New= 229
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    229      New= 230
+GDT>EX
+>look
+Maze
+>gdt
+GDT>ah
+Old=    230      New= 231
+GDT>EX
+>look
+Forest
+>gdt
+GDT>ah
+Old=    231      New= 232
+GDT>EX
+>look
+Forest
+>gdt
+GDT>ah
+Old=    232      New= 233
+GDT>EX
+>look
+Forest
+>gdt
+GDT>ah
+Old=    233      New= 234
+GDT>EX
+>look
+Forest
+>gdt
+GDT>ah
+Old=    234      New= 235
+GDT>EX
+>look
+Forest
+>gdt
+GDT>ah
+Old=    235      New= 236
+GDT>EX
+>look
+Clearing
+>gdt
+GDT>ah
+Old=    236      New= 237
+GDT>EX
+>look
+Deep Ravine
+>gdt
+GDT>ah
+Old=    237      New= 238
+GDT>EX
+>look
+Rocky Crawl
+>gdt
+GDT>ah
+Old=    238      New= 239
+GDT>EX
+>look
+Reservoir South
+>gdt
+GDT>ah
+Old=    239      New= 240
+GDT>EX
+>look
+Reservoir
+>gdt
+GDT>ah
+Old=    240      New= 241
+GDT>EX
+>look
+Reservoir North
+>gdt
+GDT>ah
+Old=    241      New= 242
+GDT>EX
+>look
+Stream View
+>gdt
+GDT>ah
+Old=    242      New= 243
+GDT>EX
+>look
+Stream
+>gdt
+GDT>ah
+Old=    243      New= 244
+GDT>EX
+>look
+Egyptian Room
+>gdt
+GDT>ah
+Old=    244      New= 245
+GDT>EX
+>look
+Glacier Room
+>gdt
+GDT>ah
+Old=    245      New= 246
+GDT>EX
+>look
+Ruby Room
+>gdt
+GDT>ah
+Old=    246      New= 247
+GDT>EX
+>look
+Atlantis Room
+>gdt
+GDT>ah
+Old=    247      New= 248
+GDT>EX
+>look
+Deep Canyon
+>gdt
+GDT>ah
+Old=    248      New= 249
+GDT>EX
+>look
+Loud Room
+>gdt
+GDT>ah
+Old=    249      New= 250
+GDT>EX
+>look
+Mirror Room
+>gdt
+GDT>ah
+Old=    250      New= 251
+GDT>EX
+>look
+Mirror Room
+>gdt
+GDT>ah
+Old=    251      New= 252
+GDT>EX
+>look
+Cave
+>gdt
+GDT>ah
+Old=    252      New= 253
+GDT>EX
+>look
+Cave
+>gdt
+GDT>ah
+Old=    253      New= 254
+GDT>EX
+>look
+Steep Crawlway
+>gdt
+GDT>ah
+Old=    254      New= 255
+GDT>EX
+>look
+Narrow Crawlway
+>gdt
+GDT>ah
+Old=    255      New= 256
+GDT>EX
+>look
+Cold Passage
+>gdt
+GDT>ah
+Old=    256      New= 257
+GDT>EX
+>look
+Winding Passage
+>gdt
+GDT>ah
+Old=    257      New= 258
+GDT>EX
+>look
+Slide Room
+>gdt
+GDT>ah
+Old=    258      New= 259
+GDT>EX
+>look
+Mine Entrance
+>gdt
+GDT>ah
+Old=    259      New= 260
+GDT>EX
+>look
+Squeaky Room
+>gdt
+GDT>ah
+Old=    260      New= 261
+GDT>EX
+>look
+Shaft Room
+>gdt
+GDT>ah
+Old=    261      New= 262
+GDT>EX
+>look
+Wooden Tunnel
+>gdt
+GDT>ah
+Old=    262      New= 263
+GDT>EX
+>look
+Smelly Room
+>gdt
+GDT>ah
+Old=    263      New= 264
+GDT>EX
+>look
+Gas Room
+>gdt
+GDT>ah
+Old=    264      New= 265
+GDT>EX
+>look
+Ladder Top
+>gdt
+GDT>ah
+Old=    265      New= 266
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    266      New= 267
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    267      New= 268
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    268      New= 269
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    269      New= 270
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    270      New= 271
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    271      New= 272
+GDT>EX
+>look
+Coal Mine
+>gdt
+GDT>ah
+Old=    272      New= 273
+GDT>EX
+>look

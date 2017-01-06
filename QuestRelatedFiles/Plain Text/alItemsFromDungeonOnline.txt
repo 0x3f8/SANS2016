@@ -1,0 +1,242 @@
+1	A brown sack is here.	brown sack	On the table is an elongated brown sack, smelling of hot peppers.
+2	There is a clove of garlic here.	clove of garlic	
+3	A hot pepper sandwich is here.	lunch	
+4	There is a small piece of vitreous slag here.	piece of vitreous slag	
+5	There is a small heap of coal here.	small pile of coal	
+6	There is an exquisite jade figurine here.	jade figurine	
+7		machine	
+8	There is an enormous diamond (perfectly cut) here.	huge diamond	
+9	There is a trophy case here.	trophy case	
+10	A clear glass bottle is here.	glass bottle	
+11	There is some water here.	quantity of water	A bottle is sitting on the table.
+12	There is a large coil of rope here.	rope	A large coil of rope is lying in the corner.
+13	There is a nasty-looking knife lying here.	knife	On a table is a nasty-looking knife.
+14	There is an elvish sword here.	sword	On hooks above the mantlepiece hangs an elvish sword of great antiquity.
+15	There is a brass lantern (battery-powered) here.	lamp	A battery-powered brass lantern is on the trophy case.
+16	There is a broken brass lantern here.	broken lamp	
+17		carpet	
+18	There is a pile of leaves on the ground.	pile of leaves	
+19	A nasty-looking troll, brandishing a bloody axe, blocks all passages
+out of the room.	troll	
+20	There is a bloody axe here.	bloody axe	
+21	There is a rusty knife here.	rusty knife	Beside the skeleton is a rusty knife.
+22	There is a burned-out lantern here.	burned-out lantern	The deceased adventurer's useless lantern is here.
+23	There is a set of skeleton keys here.	set of skeleton keys	
+24	A skeleton, probably the remains of a luckless adventurer, lies here.	skeleton	
+25	An old leather bag, bulging with coins, is here.	bag of coins	
+26	There is a large platinum bar here.	platinum bar	
+27	There is a pearl necklace here with hundreds of large pearls.	pearl necklace	
+28		mirror	
+29		mirror	
+30	A mass of ice fills the western half of the room.	glacier	
+31	There is a moby ruby lying here.	ruby	On the floor lies a moby ruby.
+32	Neptune's own crystal trident is here.	crystal trident	On the shore lies Neptune's own crystal trident.
+33	There is a solid gold coffin, used for the burial of Ramses II, here.	gold coffin	
+34	There is an ivory torch here.	torch	Sitting on the pedestal is a flaming torch, made of ivory.
+35	At the end of the chain is a basket.	basket	
+36			
+37	There is a sapphire-encrusted bracelet here.	sapphire bracelet	
+38	There is a pile of wooden timbers here.	pile of timbers	
+39	There is a dented steel box here.	steel box	
+40	There is a Stradivarius here.	fancy violin	
+41	There are old engravings on the walls here.	wall with engravings	
+42			
+43	There is an extremely valuable (perhaps original) grail here.	grail	
+44		prayer	
+45	There is an old trunk here, bulging with assorted jewels.	trunk with jewels	Lying half buried in the mud is an old trunk, bulging with jewels.
+46	There is a small brass bell here.	bell	Lying in the corner of the room is a small brass bell.
+47	There is a large black book here.	book	On the alter is a large black book, open to page 569.
+48	There are two candles here.	pair of candles	On the two ends of the altar are burning candles.
+49	There is a tour guidebook here.	tour guidebook	A guidebook entitled "FLOOD CONTROL DAM #3" is on the
+reception desk.
+50	There is an issue of US NEWS & DUNGEON REPORT dated 11-MAR-78 here.	newspaper	
+51	There is a matchbook whose cover says "VISIT BEAUTIFUL FCD #3" here.	matchbook	
+52	There is a small leaflet here.	leaflet	
+53	There is a small wrapped mailbox here.	mailbox	
+54	There is an object which looks like a tube of toothpaste here.	tube	
+55	There is some gunk here.	viscous material	
+56	There is a wrench here.	wrench	
+57	There is a screwdriver here.	screwdriver	
+58		cyclops	
+59	There is a silver chalice, intricately engraved, here.	chalice	
+60	A masterpiece by a neglected genius is here.	painting	Fortunately, there is still one chance for you to be a vandal, for on
+the far wall is a work of unparalleled beauty.
+61	There is a suspicious-looking individual, holding a bag, leaning
+against one wall.  He is armed with a vicious-looking stilletto.	thief	
+62	There is a vicious-looking stilletto here.	stilletto	
+63		window	
+64		bolt	
+65		grating	
+66		door	
+67		door	
+68		door	
+69		door	
+70		switch	
+71		head on a pole	
+72		pile of corpses	
+73		pile of bodies	
+74		dam	
+75		railing	
+76		gate	
+77		bubble	
+78		leak	
+79		button	
+80		button	
+81		button	
+82		button	
+83		bat	
+84		rainbow	
+85	There is a pot of gold here.	pot of gold	At the end of the rainbow is a pot of gold.
+86	There is a beautiful statue here.	statue	
+87	There is a folded pile of plastic here which has a small valve attached.	plastic inflatable boat	
+88	There is a pile of plastic here with a large hole in it.	holed plastic boat	
+89	There is a small pump here.	hand-held air pump	
+90	There is an inflated boat here.	magic boat	
+91	There is a tan label here.	tan label	
+92	There is a sharp broken stick here.	sharp broken stick	A sharp stick, which appears to have been broken at one end, is here.
+93		barrel	
+94	There is a red buoy here (probably a warning).	red buoy	
+95	There is a large emerald here.	large emerald	
+96	There is a large shovel here.	shovel	
+97	There is a hunk of bat guano here.	hunk of bat guano	
+98	There is a very large and extremely heavy wicker basket with a cloth
+bag here.  Inside the basket is a metal receptacle of some kind.
+Attached to the basket on the outside is a piece of wire.	basket	
+99		receptacle	
+100		cloth bag	
+101		braided wire	
+102	There is a small hook attached to the rock here.	hook	
+103	There is a small hook attached to the rock here.	hook	
+104	There is an engraved zorkmid coin here.	gold zorkmid	On the floor is a gold zorkmid coin (a valuable collector's item).
+105		box	
+106	There is a card with writing on it here.	card	
+107		hole	
+108	Lord Dimwit's crown is here.	crown	The excessively gaudy crown of Lord Dimwit Flathead is here.
+109	There is a square brick here which feels like clay.	brick	
+110	There is a coil of thin shiny wire here.	wire coil	
+111	There is a nervous Volcano Gnome here.	Volcano Gnome	
+112	There is a blue label here.	blue label	
+113	There is a balloon here, broken into pieces.	broken balloon	
+114	There is a blue book here.	blue book	
+115	There is a green book here.	green book	
+116	There is a purple book here.	purple book	
+117	There is a white book here.	white book	
+118	There is a Flathead commemorative stamp here.	stamp	
+119		tomb	
+120	There are four heads here, mounted securely on poles.	set of poled heads	
+121	Many empty Coke bottles are here.  Alas, they can't hold water.	bunch of Coke bottles	There is a large pile of empty Coke bottles here, evidently produced
+by the implementers during their long struggle to win totally.
+122	There is an enormous stack of line-printer paper here.  It is barely
+readable and totally unintelligable.	stack of listings	There is a gigantic pile of line-printer output here.  Although the
+paper once contained useful information, almost nothing can be
+distinguished now.
+123	There is a large case here, containing objects which you used to possess.	large case	
+124	There is a mangled cage here.	mangled cage	
+125	There is an steel cage in the middle of the room.	steel cage	
+126	There is a beautiful crystal sphere here.	crystal sphere	
+127		button	
+128		button	
+129		button	
+130		wall with etchings	
+131		wall with etchings	
+132	A stoppered glass flask with skull-and-crossbones markings is here.
+The flask is filled with some clear liquid.	glass flask	
+133	The leak has submerged the depressed area in a pool of sewage.	pool of sewage	
+134	There is a tin of rare spices here.	tin of spices	
+135		large oblong table	
+136		group of wooden posts	
+137	There is a wooden bucket here, three feet in diameter and three feet
+high.	wooden bucket	
+138	There is a piece of cake where with the words "EAT ME" on it.	piece of "EAT ME" cake	
+139	There is a piece of cake with orange icing here.	piece of cake with orange icing	
+140	There is a piece of cake with red icing here.	piece of cake with red icing	
+141	There is a piece of cake with blue (ecch) icing here.	piece of cake with blue icing	
+142	There is a robot here.	robot	
+143	There is a green piece of paper here.	green piece of paper	
+144		large tree	
+145		large tree	
+146		cliff	
+147		white cliff	
+148	200 neatly stacked zorkmid bills are here.	stack of zorkmid bills	On the floor sit 200 neatly stacked zorkmid bills.
+149	A portrait of J. Pierpont Flathead is here.	portrait of J. Pierpont Flathead	A portrait of J. Pierpont Flathead hangs on the wall.
+150		large stone cube	
+151		shimmering curtain of light	
+152	There is a Gnome of Zurich here.	gnome of Zurich	
+153	There is a small birds nest here.	birds nest	On the branch is a small birds nest.
+154	There is a jewel-encrusted egg here.	jewel-encrusted egg	In the bird's nest is a large egg encrusted with precious jewels,
+apparently scavenged somewhere by a childless songbird.  The egg is
+covered with fine gold inlay and ornamented in lapis lazuli and
+mother-of-pearl.  Unlike most eggs, this one is hinged and has a
+delicate looking clasp holding it closed.  The egg appears extremely
+fragile.
+155	There is a somewhat ruined egg here.	broken jewel-encrusted egg	
+156	There is a beautiful brass bauble here.	beautiful brass bauble	
+157	There is a golden clockwork canary here.	clockwork canary	There is a golden clockwork canary nestled in the egg.  It has ruby
+eyes and a silver beak.  Through a crystal window below its left
+wing you can see intricate machinery inside.  It appears to have
+wound down.
+158	There is a non-functional canary here.	broken clockwork canary	There is a golden clockwork canary nestled in the egg.  It seems to
+have recently had a bad experience.  The mountings for its jewel-like
+eyes are empty, and its silver beak is crumpled.  Through a cracked
+crystal window below its left wing you can see the remains of
+intricate machinery.  It is not clear what result winding it would
+have, as the mainspring appears sprung.
+159		yellow panel	
+160		white panel	
+161		red panel	
+162		black panel	
+163		mahogany wall	
+164		pine wall	
+165		wooden bar	
+166		long pole	
+167		short pole	
+168		T-bar	
+169		compass arrow	
+170		red button	
+171		red beam of light	
+172		bronze door	
+173		wooden door	
+174		locked door	
+175		cell door	
+176		large button	
+177		sundial	
+178		numeral 1	
+179		numeral 2	
+180		numeral 3	
+181		numeral 4	
+182		numeral 5	
+183		numeral 6	
+184		numeral 7	
+185		numeral 8	
+186	There is a piece of paper on the ground here.	note from the Thief	
+187		small slit	
+188	There is a solid gold engraved card here.	gold card	Nestled inside the niche is an engraved gold card.
+189		steel door	
+190			
+191			
+192			
+193		cretin	
+194		everything	
+195		valuables	
+196		sailor	
+197		set of teeth	
+198		wall	
+199		lurking grue	
+200		pair of hands	
+201		breath	
+202		flyer	
+203		bird	
+204		tree	
+205		northern wall	
+206		southern wall	
+207		eastern wall	
+208		western wall	
+209		water	
+210		Guardian of Zork	
+211		compass rose	
+212		mirror	
+213		panel	
+214		stone channel	
+215	The dungeon master is quietly leaning on his staff here.	dungeon master	
+216		ladder	
+217	The elf is facing you keeping his back warmed by the fire.	Elf	

@@ -1,4 +1,4 @@
-These are scripts I used to solve some of the challenges
+These are scripts I used to solve some of the challenges, I may rewrite the expect scripts as pyexpect.  Much cleaner output!
 
 **getAllTextFromDungeonOnline.exp**
 
@@ -16,25 +16,25 @@ This expect script will connect to the dungeon server and retrieve all room desc
 expect getAllRoomsFromDungeonOnline.exp > someTextFile
 ```
 
+**getAllRoomsFromDungeonOnline.py**
+
+Improved script to get all room descriptions.  Uses the DR command to get the room objects, then uses the two description fields without actually visiting the rooms.
+
+```
+python getAllRoomsFromDungeonOnline.py
+```
 
 **getAllItemsFromDungeonOnline.exp**
 
-This experimental expect script will connect to the dungeon server and retrieve all items TK GDT command then performing inventory/drop.
+This pexpect script will connect to the dungeon server and retrieve all items though debugging (GDT) and Display Text for each object description
 
 Current Issues:
+- My python regex-fu is weak. Columns are fixed width so I should be able to pull them all and include details like room numbers.  Later maybe?
 
-- Dropping the Axe causes the troll to appear and murder you.  Using NT doesn't fix this
-- Dropping the skeleton causes its ghose to appear, but the script keeps going
-- Several other items cause issues
-- At some point items don't get dropped and then inventory begins to stack, making it difficult to verify item index number
-
-*I've discovered another way to find item descriptions and will be posting an update soon*
 
 ```
-expect getAllRoomsFromDungeonOnline.exp > someTextFile
+python getItemsFromDungeonOnline.py
 ```
-
-Then read the text file
 
 **getTweets.py**
 
