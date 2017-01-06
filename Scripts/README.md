@@ -28,6 +28,7 @@ Current Issues:
 - Several other items cause issues
 - At some point items don't get dropped and then inventory begins to stack, making it difficult to verify item index number
 
+*I've discovered another way to find item descriptions and will be posting an update soon*
 
 ```
 expect getAllRoomsFromDungeonOnline.exp > someTextFile
