@@ -50,3 +50,5 @@ access_key = ""
 access_secret = ""
 ```
 
+
+**Sample output is in the [Plain Text Folder](../QuestRelatedFiles/Plain Text)
